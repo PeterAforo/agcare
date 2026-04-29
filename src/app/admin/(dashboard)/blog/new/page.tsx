@@ -1,0 +1,25 @@
+import GenericForm from "@/components/admin/GenericForm";
+import type { FieldDef } from "@/components/admin/GenericForm";
+
+const fields: FieldDef[] = [
+  { name: "title", label: "Title", type: "text", required: true },
+  { name: "slug", label: "Slug", type: "text", required: true, placeholder: "my-blog-post-title" },
+  { name: "excerpt", label: "Excerpt", type: "textarea", placeholder: "Brief summary of the post..." },
+  { name: "content", label: "Content (HTML)", type: "textarea" },
+  { name: "image", label: "Featured Image URL", type: "text", placeholder: "/images/blog_1.jpg" },
+  { name: "badge", label: "Badge / Category", type: "text", half: true },
+  { name: "badgeColor", label: "Badge Color", type: "color", half: true },
+  { name: "publishedAt", label: "Publish Date", type: "date", half: true },
+  { name: "isPublished", label: "Status", type: "select", half: true, options: [{ label: "Published", value: "true" }, { label: "Draft", value: "false" }] },
+];
+
+export default function NewBlogPostPage() {
+  return (
+    <div>
+      <h1 className="text-2xl font-bold mb-6" style={{ color: "#343877" }}>New Blog Post</h1>
+      <div className="bg-white rounded-xl p-6 shadow-sm">
+        <GenericForm fields={fields} apiModel="blog" mode="create" backHref="/admin/blog" initialData={{ badgeColor: "#49C2DF", isPublished: "false" }} />
+      </div>
+    </div>
+  );
+}

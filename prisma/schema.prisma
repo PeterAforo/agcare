@@ -1,0 +1,341 @@
+generator client {
+  provider = "prisma-client"
+  output   = "./generated"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── AUTH & RBAC ──────────────────────────────────────────
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  EDITOR
+  VIEWER
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String
+  email         String    @unique
+  password      String
+  role          Role      @default(VIEWER)
+  avatar        String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  blogPosts     BlogPost[]
+
+  @@map("users")
+}
+
+// ─── SITE SETTINGS ────────────────────────────────────────
+
+model SiteSettings {
+  id            String   @id @default(cuid())
+  siteName      String   @default("AGREDS")
+  tagline       String?
+  logoLight     String?
+  logoDark      String?
+  favicon       String?
+  contactEmail  String?
+  contactPhone  String?
+  contactPhone2 String?
+  address       String?
+  socialLinks   Json?
+  updatedAt     DateTime @updatedAt
+
+  @@map("site_settings")
+}
+
+// ─── NAVIGATION ───────────────────────────────────────────
+
+enum MenuLocation {
+  HEADER
+  FOOTER
+  SIDEBAR
+}
+
+model Menu {
+  id        String       @id @default(cuid())
+  name      String       @unique
+  location  MenuLocation @default(HEADER)
+  isActive  Boolean      @default(true)
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+
+  items     MenuItem[]
+
+  @@map("menus")
+}
+
+model MenuItem {
+  id          String     @id @default(cuid())
+  menuId      String
+  menu        Menu       @relation(fields: [menuId], references: [id], onDelete: Cascade)
+  label       String
+  href        String?    
+  pageId      String?
+  page        Page?      @relation(fields: [pageId], references: [id], onDelete: SetNull)
+  parentId    String?
+  parent      MenuItem?  @relation("MenuItemChildren", fields: [parentId], references: [id], onDelete: Cascade)
+  children    MenuItem[] @relation("MenuItemChildren")
+  order       Int        @default(0)
+  openNewTab  Boolean    @default(false)
+  isActive    Boolean    @default(true)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  @@map("menu_items")
+}
+
+// ─── PAGES & SECTIONS ─────────────────────────────────────
+
+model Page {
+  id              String     @id @default(cuid())
+  slug            String     @unique
+  title           String
+  metaDescription String?
+  metaKeywords    String?
+  featuredImage   String?
+  template        String     @default("default")
+  isPublished     Boolean    @default(false)
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+
+  sections        Section[]
+  menuItems       MenuItem[]
+
+  @@map("pages")
+}
+
+enum SectionType {
+  HERO
+  RICH_TEXT
+  IMAGE_TEXT
+  ABOUT
+  ICONS
+  CAUSES
+  PROJECTS
+  EVENTS
+  TESTIMONIALS
+  BLOG
+  DONORS
+  GALLERY
+  TEAM
+  FAQ
+  STATS
+  INSTAGRAM
+  SUBSCRIBE
+  CTA
+  VOLUNTEER
+  BANNER
+  CONTACT_FORM
+  CUSTOM_HTML
+  SPACER
+}
+
+model Section {
+  id        String      @id @default(cuid())
+  pageId    String
+  page      Page        @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  type      SectionType
+  title     String?
+  order     Int         @default(0)
+  isVisible Boolean     @default(true)
+  content   Json?
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  @@map("sections")
+}
+
+// ─── HERO SLIDES ──────────────────────────────────────────
+
+model HeroSlide {
+  id          String  @id @default(cuid())
+  title       String
+  subtitle    String?
+  ctaText     String?
+  ctaLink     String?
+  image       String
+  mobileImage String?
+  tabletImage String?
+  order       Int     @default(0)
+  isActive    Boolean @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("hero_slides")
+}
+
+// ─── CAUSES ───────────────────────────────────────────────
+
+model Cause {
+  id            String  @id @default(cuid())
+  title         String
+  description   String
+  image         String
+  badge         String?
+  badgeColor    String  @default("#2EC774")
+  goalAmount    Float   @default(0)
+  pledgedAmount Float   @default(0)
+  isActive      Boolean @default(true)
+  order         Int     @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("causes")
+}
+
+// ─── PROJECTS ─────────────────────────────────────────────
+
+enum ProjectLayout {
+  VERTICAL
+  HORIZONTAL
+  PRIMARY
+}
+
+model Project {
+  id          String        @id @default(cuid())
+  title       String
+  description String
+  image       String
+  badge       String?
+  badgeColor  String        @default("#2EC774")
+  goalAmount  Float?
+  date        DateTime?
+  layoutType  ProjectLayout @default(VERTICAL)
+  order       Int           @default(0)
+  isPublished Boolean       @default(true)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@map("projects")
+}
+
+// ─── EVENTS ───────────────────────────────────────────────
+
+model Event {
+  id          String    @id @default(cuid())
+  title       String
+  location    String?
+  startDate   DateTime
+  endDate     DateTime?
+  time        String?
+  image       String?
+  description String?
+  isPublished Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("events")
+}
+
+// ─── BLOG POSTS ───────────────────────────────────────────
+
+model BlogPost {
+  id          String    @id @default(cuid())
+  title       String
+  slug        String    @unique
+  excerpt     String?
+  content     String?
+  image       String?
+  badge       String?
+  badgeColor  String    @default("#49C2DF")
+  authorId    String?
+  author      User?     @relation(fields: [authorId], references: [id], onDelete: SetNull)
+  isPublished Boolean   @default(false)
+  publishedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("blog_posts")
+}
+
+// ─── TESTIMONIALS ─────────────────────────────────────────
+
+model Testimonial {
+  id         String   @id @default(cuid())
+  quote      String
+  authorName String
+  authorRole String?
+  avatar     String?
+  order      Int      @default(0)
+  isActive   Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@map("testimonials")
+}
+
+// ─── DONORS ───────────────────────────────────────────────
+
+model Donor {
+  id        String   @id @default(cuid())
+  name      String
+  logo      String
+  url       String?
+  order     Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("donors")
+}
+
+// ─── GALLERY ──────────────────────────────────────────────
+
+model GalleryImage {
+  id        String   @id @default(cuid())
+  image     String
+  caption   String?
+  category  String?
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("gallery_images")
+}
+
+// ─── TEAM MEMBERS ─────────────────────────────────────────
+
+model TeamMember {
+  id          String   @id @default(cuid())
+  name        String
+  role        String
+  image       String?
+  bio         String?
+  socialLinks Json?
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("team_members")
+}
+
+// ─── SUBSCRIBERS ──────────────────────────────────────────
+
+model Subscriber {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  subscribedAt DateTime @default(now())
+
+  @@map("subscribers")
+}
+
+// ─── MEDIA FILES ──────────────────────────────────────────
+
+model MediaFile {
+  id         String   @id @default(cuid())
+  url        String
+  filename   String
+  mimeType   String?
+  size       Int?
+  uploadedAt DateTime @default(now())
+
+  @@map("media_files")
+}
