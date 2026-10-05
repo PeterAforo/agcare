@@ -496,6 +496,26 @@ async function main() {
     console.log("  ✅ Menus created");
   }
 
+  // ── PAYMENT GATEWAY (placeholder — fill credentials in /admin/gateways) ──
+  const existingGateway = await prisma.paymentGateway.findFirst();
+  if (!existingGateway) {
+    await prisma.paymentGateway.create({
+      data: {
+        name: "PaySwitch Teller",
+        provider: "teller",
+        isActive: false,
+        isDefault: true,
+        credentials: {
+          merchantId: "",
+          apiuser: "",
+          apiKey: "",
+          environment: "test",
+        },
+      },
+    });
+    console.log("  ✅ Payment gateway placeholder created");
+  }
+
   console.log("🌱 Seeding complete!");
 }
 

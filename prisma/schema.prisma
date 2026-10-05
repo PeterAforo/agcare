@@ -339,3 +339,67 @@ model MediaFile {
 
   @@map("media_files")
 }
+
+// ─── CONTACT MESSAGES ─────────────────────────────────────
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  isRead    Boolean  @default(false)
+  isReplied Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@map("contact_messages")
+}
+
+// ─── PAYMENT GATEWAYS ──────────────────────────────────────
+
+model PaymentGateway {
+  id          String   @id @default(cuid())
+  name        String
+  provider    String   @default("teller")
+  credentials Json?
+  webhookSecret String?
+  isActive    Boolean  @default(true)
+  isDefault  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  donations   Donation[]
+
+  @@map("payment_gateways")
+}
+
+// ─── DONATIONS ─────────────────────────────────────────────
+
+enum DonationStatus {
+  PENDING
+  SUCCESS
+  FAILED
+  CANCELLED
+  REFUNDED
+}
+
+model Donation {
+  id              String         @id @default(cuid())
+  reference       String         @unique
+  donorName       String
+  donorEmail      String
+  donorPhone      String?
+  amount          Float
+  currency        String         @default("GHS")
+  cause          String?
+  message        String?
+  status          DonationStatus @default(PENDING)
+  gatewayId      String?
+  gateway        PaymentGateway? @relation(fields: [gatewayId], references: [id], onDelete: SetNull)
+  gatewayReference String?
+  metadata       Json?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  @@map("donations")
+}

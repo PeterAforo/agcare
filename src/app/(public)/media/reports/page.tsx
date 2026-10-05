@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import PageBanner from "@/components/public/PageBanner";
 
 export const metadata: Metadata = {
@@ -115,13 +116,13 @@ export default function ReportsPage() {
           <div className="text-center mt-12">
             <p className="text-sm" style={{ color: "#9e9e9e" }}>
               For additional reports or specific programme documentation, please{" "}
-              <a
+              <Link
                 href="/contacts"
                 className="font-semibold underline"
                 style={{ color: "#343877" }}
               >
                 contact us
-              </a>
+              </Link>
               .
             </p>
           </div>

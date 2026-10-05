@@ -2,7 +2,7 @@ import GenericForm from "@/components/admin/GenericForm";
 import type { FieldDef } from "@/components/admin/GenericForm";
 
 const fields: FieldDef[] = [
-  { name: "image", label: "Image URL", type: "text", required: true, placeholder: "/images/photo.jpg" },
+  { name: "image", label: "Image", type: "image", required: true },
   { name: "caption", label: "Caption", type: "text" },
   { name: "category", label: "Category", type: "text", half: true, placeholder: "Health, Education, etc." },
   { name: "order", label: "Order", type: "number", half: true },

@@ -13,6 +13,7 @@ import {
   Save,
   Settings,
 } from "lucide-react";
+import ImageUpload from "@/components/admin/ImageUpload";
 
 const SECTION_TYPES = [
   { value: "BANNER", label: "Page Banner", icon: "🏷️" },
@@ -359,12 +360,9 @@ export default function PageEditor({ mode, initialData }: Props) {
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-semibold mb-1.5" style={{ color: "#343877" }}>Featured Image</label>
-                <input
+                <ImageUpload
                   value={page.featuredImage}
-                  onChange={(e) => handlePageChange("featuredImage", e.target.value)}
-                  className={inputClass}
-                  style={{ borderColor: "#dee2e6" }}
-                  placeholder="/images/..."
+                  onChange={(url) => handlePageChange("featuredImage", url)}
                 />
               </div>
               <div>
@@ -461,7 +459,11 @@ function SectionContentEditor({
       return (
         <div className="pt-3 space-y-2">
           <input value={(content.heading as string) || ""} onChange={(e) => onChange("heading", e.target.value)} placeholder="Banner heading..." className={inputClass} style={style} />
-          <input value={(content.backgroundImage as string) || ""} onChange={(e) => onChange("backgroundImage", e.target.value)} placeholder="Background image URL (optional)" className={inputClass} style={style} />
+          <ImageUpload
+            label="Background Image (optional)"
+            value={(content.backgroundImage as string) || ""}
+            onChange={(url) => onChange("backgroundImage", url)}
+          />
         </div>
       );
     case "RICH_TEXT":
@@ -474,7 +476,11 @@ function SectionContentEditor({
     case "IMAGE_TEXT":
       return (
         <div className="pt-3 space-y-2">
-          <input value={(content.image as string) || ""} onChange={(e) => onChange("image", e.target.value)} placeholder="Image URL" className={inputClass} style={style} />
+          <ImageUpload
+            label="Image"
+            value={(content.image as string) || ""}
+            onChange={(url) => onChange("image", url)}
+          />
           <textarea value={(content.text as string) || ""} onChange={(e) => onChange("text", e.target.value)} rows={3} placeholder="Text content..." className={inputClass} style={style} />
           <select value={(content.layout as string) || "image-left"} onChange={(e) => onChange("layout", e.target.value)} className={inputClass} style={style}>
             <option value="image-left">Image Left</option>
@@ -492,7 +498,11 @@ function SectionContentEditor({
             <input value={(content.buttonText as string) || ""} onChange={(e) => onChange("buttonText", e.target.value)} placeholder="Button text" className={inputClass} style={style} />
             <input value={(content.buttonLink as string) || ""} onChange={(e) => onChange("buttonLink", e.target.value)} placeholder="Button link" className={inputClass} style={style} />
           </div>
-          <input value={(content.backgroundImage as string) || ""} onChange={(e) => onChange("backgroundImage", e.target.value)} placeholder="Background image URL" className={inputClass} style={style} />
+          <ImageUpload
+            label="Background Image"
+            value={(content.backgroundImage as string) || ""}
+            onChange={(url) => onChange("backgroundImage", url)}
+          />
         </div>
       );
     case "STATS":

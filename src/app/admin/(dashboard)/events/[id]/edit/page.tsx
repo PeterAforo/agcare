@@ -6,7 +6,7 @@ import type { FieldDef } from "@/components/admin/GenericForm";
 const fields: FieldDef[] = [
   { name: "title", label: "Title", type: "text", required: true },
   { name: "description", label: "Description", type: "textarea" },
-  { name: "image", label: "Image URL", type: "text" },
+  { name: "image", label: "Image", type: "image" },
   { name: "location", label: "Location", type: "text" },
   { name: "startDate", label: "Start Date", type: "date", required: true, half: true },
   { name: "endDate", label: "End Date", type: "date", half: true },

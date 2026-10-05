@@ -1,13 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+import { requireRole } from "@/lib/rbac";
 
 export async function POST(req: NextRequest) {
-  const session = await auth();
-  if (!session?.user) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const guard = await requireRole("EDITOR");
+  if (guard instanceof NextResponse) return guard;
 
   const body = await req.json();
   const { sections, ...pageData } = body;
@@ -39,10 +37,8 @@ export async function POST(req: NextRequest) {
 }
 
 export async function PUT(req: NextRequest) {
-  const session = await auth();
-  if (!session?.user) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const guard = await requireRole("EDITOR");
+  if (guard instanceof NextResponse) return guard;
 
   const body = await req.json();
   const { id, sections, ...pageData } = body;

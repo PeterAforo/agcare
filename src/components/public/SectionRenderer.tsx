@@ -1,4 +1,10 @@
 import { prisma } from "@/lib/prisma";
+import HeroSlider from "./HeroSlider";
+import AboutSection from "./AboutSection";
+import IconsSection from "./IconsSection";
+import SubscribeSection from "./SubscribeSection";
+import InstagramSlider from "./InstagramSlider";
+import ContactForm from "./ContactForm";
 
 interface SectionProps {
   section: {
@@ -28,8 +34,27 @@ export default async function SectionRenderer({ section }: SectionProps) {
       return <FAQSection items={(content.items as string) || "[]"} />;
     case "SPACER":
       return <SpacerSection height={(content.height as string) || "md"} />;
+    case "HERO": {
+      const slides = await prisma.heroSlide.findMany({ where: { isActive: true }, orderBy: { order: "asc" } });
+      return <HeroSlider slides={JSON.parse(JSON.stringify(slides))} />;
+    }
+    case "ABOUT":
+      return <AboutSection />;
+    case "ICONS":
+      return <IconsSection />;
+    case "SUBSCRIBE":
+      return <SubscribeSection />;
+    case "INSTAGRAM":
+      return <InstagramSlider />;
     case "CONTACT_FORM":
-      return <ContactFormSection />;
+      return (
+        <section className="py-16 px-6 max-w-2xl mx-auto">
+          {section.title && <h2 className="text-2xl md:text-3xl font-bold text-center mb-8" style={{ color: "#343877" }}>{section.title}</h2>}
+          <ContactForm />
+        </section>
+      );
+    case "CUSTOM_HTML":
+      return <RichTextSection html={(content.html as string) || ""} />;
     case "CAUSES": {
       const causes = await prisma.cause.findMany({ where: { isActive: true }, orderBy: { order: "asc" }, take: 6 });
       return <DataListSection title={section.title} items={causes.map((c) => ({ id: c.id, title: c.title, description: c.description, image: c.image }))} type="causes" />;
@@ -181,24 +206,6 @@ function FAQSection({ items }: { items: string }) {
 function SpacerSection({ height }: { height: string }) {
   const sizes: Record<string, string> = { sm: "32px", md: "64px", lg: "96px", xl: "128px" };
   return <div style={{ height: sizes[height] || "64px" }} />;
-}
-
-function ContactFormSection() {
-  return (
-    <section className="py-16 px-6 max-w-2xl mx-auto">
-      <form className="space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input type="text" placeholder="Your Name" className="w-full px-4 py-3 rounded-lg border text-sm" required />
-          <input type="email" placeholder="Your Email" className="w-full px-4 py-3 rounded-lg border text-sm" required />
-        </div>
-        <input type="text" placeholder="Subject" className="w-full px-4 py-3 rounded-lg border text-sm" />
-        <textarea placeholder="Your Message" rows={5} className="w-full px-4 py-3 rounded-lg border text-sm" required />
-        <button type="submit" className="px-8 py-3 text-white font-bold rounded-lg text-sm" style={{ backgroundColor: "#2ec774" }}>
-          Send Message
-        </button>
-      </form>
-    </section>
-  );
 }
 
 function DataListSection({ title, items, type }: { title: string | null; items: { id: string; title: string; description: string; image: string }[]; type: string }) {

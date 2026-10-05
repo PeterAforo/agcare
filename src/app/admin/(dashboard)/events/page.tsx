@@ -2,9 +2,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import ItemActions from "@/components/admin/ItemActions";
+import SearchInput from "@/components/admin/SearchInput";
+import Pagination from "@/components/admin/Pagination";
+import { getPagination } from "@/lib/pagination";
 
-export default async function EventsPage() {
-  const events = await prisma.event.findMany({ orderBy: { startDate: "desc" } });
+export default async function EventsPage({ searchParams }: { searchParams: Promise<{ page?: string; q?: string }> }) {
+  const params = await searchParams;
+  const { page, q, take, skip } = getPagination(params);
+  const where = q
+    ? { OR: [
+        { title: { contains: q, mode: "insensitive" as const } },
+        { location: { contains: q, mode: "insensitive" as const } },
+      ] }
+    : {};
+  const [events, total] = await Promise.all([
+    prisma.event.findMany({ where, orderBy: { startDate: "desc" }, skip, take }),
+    prisma.event.count({ where }),
+  ]);
 
   return (
     <div>
@@ -13,9 +27,17 @@ export default async function EventsPage() {
           <h1 className="text-2xl font-bold" style={{ color: "#343877" }}>Events</h1>
           <p className="text-sm mt-1" style={{ color: "#9e9e9e" }}>Manage events</p>
         </div>
-        <Link href="/admin/events/new" className="px-4 py-2 rounded-lg text-white text-sm font-semibold" style={{ backgroundColor: "#2ec774" }}>+ Add Event</Link>
+        <div className="flex items-center gap-3">
+          <SearchInput q={q} action="/admin/events" placeholder="Search events…" />
+          <Link href="/admin/events/new" className="px-4 py-2 rounded-lg text-white text-sm font-semibold" style={{ backgroundColor: "#2ec774" }}>+ Add Event</Link>
+        </div>
       </div>
 
+      {events.length === 0 ? (
+        <div className="bg-white rounded-xl p-12 text-center shadow-sm">
+          <p style={{ color: "#9e9e9e" }}>{q ? `No events matching "${q}".` : "No events yet."}</p>
+        </div>
+      ) : (
       <div className="bg-white rounded-xl shadow-sm overflow-hidden">
         <table className="w-full text-sm">
           <thead>
@@ -54,6 +76,8 @@ export default async function EventsPage() {
           </tbody>
         </table>
       </div>
+      )}
+      <Pagination page={page} total={total} pageSize={take} base="/admin/events" params={{ q }} />
     </div>
   );
 }

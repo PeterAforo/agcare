@@ -1,12 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
+import SearchInput from "@/components/admin/SearchInput";
+import Pagination from "@/components/admin/Pagination";
+import { getPagination } from "@/lib/pagination";
 
-export default async function GalleryPage() {
-  const images = await prisma.galleryImage.findMany({ orderBy: { order: "asc" } });
+export default async function GalleryPage({ searchParams }: { searchParams: Promise<{ page?: string; q?: string }> }) {
+  const params = await searchParams;
+  const { page, q, take, skip } = getPagination(params, 24);
+  const where = q ? { caption: { contains: q, mode: "insensitive" as const } } : {};
+  const [images, total] = await Promise.all([
+    prisma.galleryImage.findMany({ where, orderBy: { order: "asc" }, skip, take }),
+    prisma.galleryImage.count({ where }),
+  ]);
 
   async function handleDelete(id: string) {
     "use server";
+    const { getSessionUser, hasMinRole } = await import("@/lib/rbac");
+    const user = await getSessionUser();
+    if (!user || !hasMinRole(user.role, "EDITOR")) {
+      throw new Error("Unauthorized");
+    }
     await prisma.galleryImage.delete({ where: { id } });
     const { revalidatePath } = await import("next/cache");
     revalidatePath("/admin/gallery");
@@ -20,12 +34,15 @@ export default async function GalleryPage() {
           <h1 className="text-2xl font-bold" style={{ color: "#343877" }}>Photo Gallery</h1>
           <p className="text-sm mt-1" style={{ color: "#9e9e9e" }}>Manage gallery images</p>
         </div>
-        <Link href="/admin/gallery/new" className="px-4 py-2 rounded-lg text-white text-sm font-semibold" style={{ backgroundColor: "#2ec774" }}>+ Upload Photos</Link>
+        <div className="flex items-center gap-3">
+          <SearchInput q={q} action="/admin/gallery" placeholder="Search captions…" />
+          <Link href="/admin/gallery/new" className="px-4 py-2 rounded-lg text-white text-sm font-semibold" style={{ backgroundColor: "#2ec774" }}>+ Upload Photos</Link>
+        </div>
       </div>
 
       {images.length === 0 ? (
         <div className="bg-white rounded-xl p-12 text-center shadow-sm">
-          <p style={{ color: "#9e9e9e" }}>No gallery images yet.</p>
+          <p style={{ color: "#9e9e9e" }}>{q ? `No images matching "${q}".` : "No gallery images yet."}</p>
         </div>
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
@@ -51,6 +68,7 @@ export default async function GalleryPage() {
           ))}
         </div>
       )}
+      <Pagination page={page} total={total} pageSize={take} base="/admin/gallery" params={{ q }} />
     </div>
   );
 }

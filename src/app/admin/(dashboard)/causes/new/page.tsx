@@ -4,7 +4,7 @@ import type { FieldDef } from "@/components/admin/GenericForm";
 const fields: FieldDef[] = [
   { name: "title", label: "Title", type: "text", required: true },
   { name: "description", label: "Description", type: "textarea", required: true },
-  { name: "image", label: "Image URL", type: "text", required: true, placeholder: "/images/causes_1.jpg" },
+  { name: "image", label: "Image", type: "image", required: true },
   { name: "badge", label: "Badge Text", type: "text", half: true, placeholder: "Water & Sanitation" },
   { name: "badgeColor", label: "Badge Color", type: "color", half: true },
   { name: "goalAmount", label: "Goal Amount ($)", type: "number", half: true },

@@ -2,6 +2,7 @@ import Header from "@/components/public/Header";
 import type { NavItem } from "@/components/public/Header";
 import Footer from "@/components/public/Footer";
 import { getMenuByLocation, resolveHref } from "@/lib/menu";
+import { getSiteSettings } from "@/lib/settings";
 
 function toNavItems(
   items: Awaited<ReturnType<typeof getMenuByLocation>>
@@ -27,14 +28,19 @@ export default async function PublicLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const headerMenu = await getMenuByLocation("HEADER");
+  const [headerMenu, footerMenu, settings] = await Promise.all([
+    getMenuByLocation("HEADER"),
+    getMenuByLocation("FOOTER"),
+    getSiteSettings(),
+  ]);
   const navItems = toNavItems(headerMenu);
+  const footerNavItems = toNavItems(footerMenu);
 
   return (
     <>
-      <Header navItems={navItems} />
+      <Header navItems={navItems} settings={settings} />
       <main className="flex-1">{children}</main>
-      <Footer />
+      <Footer navItems={footerNavItems} settings={settings} />
     </>
   );
 }

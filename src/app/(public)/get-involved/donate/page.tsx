@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import PageBanner from "@/components/public/PageBanner";
+import DonateForm from "@/components/public/DonateForm";
 
 export const metadata: Metadata = {
   title: "Donate | AGREDS",
@@ -108,7 +110,7 @@ export default function DonatePage() {
                   {cause.desc}
                 </p>
                 <Link
-                  href="/contacts"
+                  href={`/get-involved/donate?cause=${encodeURIComponent(cause.title)}#donate`}
                   className="inline-block px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wide transition-transform hover:-translate-y-0.5"
                   style={{
                     border: `2px solid ${cause.color}`,
@@ -123,8 +125,30 @@ export default function DonatePage() {
         </div>
       </section>
 
+      {/* Online Donation Form */}
+      <section id="donate" className="py-16 lg:py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="font-bold mb-3" style={{ fontSize: 28, color: "#343877" }}>
+                Give Online — Securely
+              </h2>
+              <p className="text-sm" style={{ color: "#555" }}>
+                Pay with card or mobile money. Your donation is processed
+                securely by PaySwitch Teller.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl p-8 shadow-sm border" style={{ borderColor: "#f1f3f5" }}>
+              <Suspense fallback={<p className="text-center text-sm" style={{ color: "#9e9e9e" }}>Loading form…</p>}>
+                <DonateForm />
+              </Suspense>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* How to Donate */}
-      <section className="py-16 lg:py-24">
+      <section className="py-16 lg:py-24" style={{ backgroundColor: "#f8f9fa" }}>
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">

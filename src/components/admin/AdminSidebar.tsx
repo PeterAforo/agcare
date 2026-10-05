@@ -18,6 +18,10 @@ import {
   Globe,
   FileStack,
   Menu,
+  CreditCard,
+  Inbox,
+  MailCheck,
+  UsersRound,
 } from "lucide-react";
 
 const navGroups = [
@@ -40,12 +44,23 @@ const navGroups = [
       { label: "Testimonials", href: "/admin/testimonials", icon: MessageSquareQuote },
       { label: "Donors", href: "/admin/donors", icon: Handshake },
       { label: "Gallery", href: "/admin/gallery", icon: ImageIcon },
+      { label: "Media", href: "/admin/media", icon: Images },
+    ],
+  },
+  {
+    label: "Engagement",
+    items: [
+      { label: "Donations", href: "/admin/donations", icon: CreditCard },
+      { label: "Messages", href: "/admin/messages", icon: Inbox },
+      { label: "Subscribers", href: "/admin/subscribers", icon: MailCheck },
+      { label: "Team Members", href: "/admin/team", icon: UsersRound },
     ],
   },
   {
     label: "System",
     items: [
       { label: "Users", href: "/admin/users", icon: Users },
+      { label: "Gateways", href: "/admin/gateways", icon: CreditCard },
       { label: "Settings", href: "/admin/settings", icon: Settings },
     ],
   },

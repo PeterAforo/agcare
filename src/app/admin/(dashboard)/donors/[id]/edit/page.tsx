@@ -5,7 +5,7 @@ import type { FieldDef } from "@/components/admin/GenericForm";
 
 const fields: FieldDef[] = [
   { name: "name", label: "Donor / Partner Name", type: "text", required: true },
-  { name: "logo", label: "Logo URL", type: "text", required: true },
+  { name: "logo", label: "Logo", type: "image", required: true },
   { name: "url", label: "Website URL", type: "url" },
   { name: "order", label: "Order", type: "number", half: true },
   { name: "isActive", label: "Status", type: "select", half: true, options: [{ label: "Active", value: "true" }, { label: "Inactive", value: "false" }] },

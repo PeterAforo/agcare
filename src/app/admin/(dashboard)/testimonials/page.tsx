@@ -1,9 +1,23 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import ItemActions from "@/components/admin/ItemActions";
+import SearchInput from "@/components/admin/SearchInput";
+import Pagination from "@/components/admin/Pagination";
+import { getPagination } from "@/lib/pagination";
 
-export default async function TestimonialsPage() {
-  const testimonials = await prisma.testimonial.findMany({ orderBy: { order: "asc" } });
+export default async function TestimonialsPage({ searchParams }: { searchParams: Promise<{ page?: string; q?: string }> }) {
+  const params = await searchParams;
+  const { page, q, take, skip } = getPagination(params);
+  const where = q
+    ? { OR: [
+        { authorName: { contains: q, mode: "insensitive" as const } },
+        { quote: { contains: q, mode: "insensitive" as const } },
+      ] }
+    : {};
+  const [testimonials, total] = await Promise.all([
+    prisma.testimonial.findMany({ where, orderBy: { order: "asc" }, skip, take }),
+    prisma.testimonial.count({ where }),
+  ]);
 
   return (
     <div>
@@ -12,9 +26,17 @@ export default async function TestimonialsPage() {
           <h1 className="text-2xl font-bold" style={{ color: "#343877" }}>Testimonials</h1>
           <p className="text-sm mt-1" style={{ color: "#9e9e9e" }}>Manage testimonials for the homepage</p>
         </div>
-        <Link href="/admin/testimonials/new" className="px-4 py-2 rounded-lg text-white text-sm font-semibold" style={{ backgroundColor: "#2ec774" }}>+ Add Testimonial</Link>
+        <div className="flex items-center gap-3">
+          <SearchInput q={q} action="/admin/testimonials" placeholder="Search testimonials…" />
+          <Link href="/admin/testimonials/new" className="px-4 py-2 rounded-lg text-white text-sm font-semibold" style={{ backgroundColor: "#2ec774" }}>+ Add Testimonial</Link>
+        </div>
       </div>
 
+      {testimonials.length === 0 && (
+        <div className="bg-white rounded-xl p-12 text-center shadow-sm">
+          <p style={{ color: "#9e9e9e" }}>{q ? `No testimonials matching "${q}".` : "No testimonials yet."}</p>
+        </div>
+      )}
       <div className="space-y-4">
         {testimonials.map((t) => (
           <div key={t.id} className="bg-white rounded-xl p-5 shadow-sm flex items-start gap-5">
@@ -32,6 +54,7 @@ export default async function TestimonialsPage() {
           </div>
         ))}
       </div>
+      <Pagination page={page} total={total} pageSize={take} base="/admin/testimonials" params={{ q }} />
     </div>
   );
 }

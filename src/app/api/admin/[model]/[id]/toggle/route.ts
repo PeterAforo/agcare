@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+import { requireRole } from "@/lib/rbac";
 
 const modelMap: Record<string, keyof typeof prisma> = {
   cause: "cause",
@@ -15,6 +15,8 @@ const modelMap: Record<string, keyof typeof prisma> = {
   page: "page",
   menu: "menu",
   "menu-item": "menuItem",
+  "team-member": "teamMember",
+  gateway: "paymentGateway",
 };
 
 const activeFieldMap: Record<string, string> = {
@@ -28,16 +30,16 @@ const activeFieldMap: Record<string, string> = {
   page: "isPublished",
   menu: "isActive",
   "menu-item": "isActive",
+  "team-member": "isActive",
+  gateway: "isActive",
 };
 
 export async function PATCH(
   req: NextRequest,
   { params }: { params: Promise<{ model: string; id: string }> }
 ) {
-  const session = await auth();
-  if (!session?.user) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const guard = await requireRole("EDITOR");
+  if (guard instanceof NextResponse) return guard;
 
   const { model, id } = await params;
   const prismaModel = modelMap[model];

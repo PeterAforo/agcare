@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Generated Prisma client and legacy HTML template assets:
+    "prisma/generated/**",
+    "template/**",
   ]),
 ]);
 

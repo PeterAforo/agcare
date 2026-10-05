@@ -4,13 +4,26 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronDown } from "lucide-react";
+import { X, ChevronDown, Search } from "lucide-react";
 
 export interface NavItem {
   label: string;
   href: string;
   openNewTab?: boolean;
   children?: NavItem[];
+}
+
+export interface HeaderSettings {
+  siteName: string;
+  tagline?: string | null;
+  logoLight: string | null;
+  logoDark: string | null;
+  favicon?: string | null;
+  contactEmail: string | null;
+  contactPhone: string | null;
+  contactPhone2: string | null;
+  address?: string | null;
+  socialLinks: Record<string, string> | null;
 }
 
 const defaultNavItems: NavItem[] = [
@@ -51,8 +64,20 @@ function HamburgerIcon({ className }: { className?: string }) {
   );
 }
 
-export default function Header({ navItems }: { navItems?: NavItem[] }) {
+export default function Header({
+  navItems,
+  settings,
+}: {
+  navItems?: NavItem[];
+  settings?: HeaderSettings;
+}) {
   const items = navItems && navItems.length > 0 ? navItems : defaultNavItems;
+  const logoDark = settings?.logoDark || "/images/logo_dark.png";
+  const logoLight = settings?.logoLight || "/images/logo_white.png";
+  const email = settings?.contactEmail || "agreds@ighamail.com";
+  const phone1 = settings?.contactPhone || "+233 30 229 062";
+  const phone2 = settings?.contactPhone2 || "+233 30 224 507";
+  const socials = settings?.socialLinks || {};
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -87,8 +112,8 @@ export default function Header({ navItems }: { navItems?: NavItem[] }) {
             </button>
             <Link href="/" className="flex-shrink-0 py-4">
               <Image
-                src={isScrolled ? "/images/logo_dark.png" : "/images/logo_white.png"}
-                alt="AGREDS"
+                src={isScrolled ? logoDark : logoLight}
+                alt={settings?.siteName || "AGREDS"}
                 width={160}
                 height={50}
                 className="h-10 md:h-12 w-auto transition-all duration-300"
@@ -159,6 +184,15 @@ export default function Header({ navItems }: { navItems?: NavItem[] }) {
               />
             </button>
             <Link
+              href="/search"
+              aria-label="Search"
+              className={`hidden sm:flex items-center px-4 transition-colors ${
+                isScrolled ? "text-primary hover:text-accent-yellow" : "text-white/90 hover:text-white"
+              }`}
+            >
+              <Search className="w-4 h-4" />
+            </Link>
+            <Link
               href="/get-involved/donate"
               className={`hidden sm:flex items-center justify-center bg-accent-yellow text-primary font-bold text-xs uppercase tracking-[.05em] transition-transform hover:scale-95 ${
                 isScrolled ? "w-40 px-6" : "w-52 px-8"
@@ -190,8 +224,8 @@ export default function Header({ navItems }: { navItems?: NavItem[] }) {
             >
               <div className="flex items-center justify-between p-5 border-b border-white/10">
                 <Image
-                  src="/images/logo_white.png"
-                  alt="AGREDS"
+                  src={logoLight}
+                  alt={settings?.siteName || "AGREDS"}
                   width={130}
                   height={40}
                   className="h-8 w-auto"
@@ -202,6 +236,13 @@ export default function Header({ navItems }: { navItems?: NavItem[] }) {
               </div>
 
               <nav className="p-5">
+                <Link
+                  href="/search"
+                  className="flex items-center gap-2 py-3 text-base font-medium border-b border-white/10 hover:text-accent-yellow transition-colors"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  <Search className="w-4 h-4" /> Search
+                </Link>
                 {items.map((item) => (
                   <MobileNavItem
                     key={item.label}
@@ -214,19 +255,29 @@ export default function Header({ navItems }: { navItems?: NavItem[] }) {
               <div className="p-5 border-t border-white/10">
                 <div className="mb-3">
                   <span className="text-xs text-white/50 uppercase tracking-wider">Email</span>
-                  <a href="mailto:agreds@ighamail.com" className="block text-sm mt-1 hover:text-accent-yellow transition-colors">
-                    agreds@ighamail.com
+                  <a href={`mailto:${email}`} className="block text-sm mt-1 hover:text-accent-yellow transition-colors">
+                    {email}
                   </a>
                 </div>
                 <div className="mb-3">
                   <span className="text-xs text-white/50 uppercase tracking-wider">Phone numbers</span>
-                  <a href="tel:+23330229062" className="block text-sm mt-1 hover:text-accent-yellow transition-colors">+233 30 229 062</a>
-                  <a href="tel:+23330224507" className="block text-sm mt-1 hover:text-accent-yellow transition-colors">+233 30 224 507</a>
+                  <a href={`tel:${phone1.replace(/\s/g, "")}`} className="block text-sm mt-1 hover:text-accent-yellow transition-colors">{phone1}</a>
+                  {phone2 && (
+                    <a href={`tel:${phone2.replace(/\s/g, "")}`} className="block text-sm mt-1 hover:text-accent-yellow transition-colors">{phone2}</a>
+                  )}
                 </div>
                 <ul className="flex gap-3 my-4">
-                  {["instagram", "google-plus", "twitter", "facebook"].map((s) => (
+                  {(Object.keys(socials).length > 0
+                    ? Object.keys(socials)
+                    : ["instagram", "google-plus", "twitter", "facebook"]
+                  ).map((s) => (
                     <li key={s}>
-                      <a href="#" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white transition-colors text-xs uppercase">
+                      <a
+                        href={socials[s] || "#"}
+                        target={socials[s] ? "_blank" : undefined}
+                        rel="noopener noreferrer"
+                        className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white transition-colors text-xs uppercase"
+                      >
                         {s[0].toUpperCase()}
                       </a>
                     </li>

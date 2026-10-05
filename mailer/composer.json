@@ -1,0 +1,9 @@
+{
+  "name": "agcare/mailer",
+  "description": "PHPMailer endpoint for the AGCare contact form",
+  "type": "project",
+  "require": {
+    "phpmailer/phpmailer": "^6.9"
+  },
+  "license": "MIT"
+}

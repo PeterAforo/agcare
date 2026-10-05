@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { HeaderSettings } from "./Header";
+
 // Social icons as inline SVGs (lucide-react doesn't include brand icons)
 const FacebookIcon = () => (
   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
@@ -11,7 +13,13 @@ const InstagramIcon = () => (
   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
 );
 
-const footerMenu = [
+const SocialIcon: Record<string, React.ReactNode> = {
+  facebook: <FacebookIcon />,
+  twitter: <TwitterIcon />,
+  instagram: <InstagramIcon />,
+};
+
+const defaultFooterMenu = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about/profile" },
   { label: "Programmes", href: "/causes/programs" },
@@ -20,7 +28,32 @@ const footerMenu = [
   { label: "Contact", href: "/contacts" },
 ];
 
-export default function Footer() {
+interface NavItemLite {
+  label: string;
+  href: string;
+  openNewTab?: boolean;
+  children?: NavItemLite[];
+}
+
+interface Props {
+  navItems?: NavItemLite[];
+  settings?: HeaderSettings;
+}
+
+export default function Footer({ navItems, settings }: Props) {
+  const logoLight = settings?.logoLight || "/images/logo_white.png";
+  const siteName = settings?.siteName || "AGREDS";
+  const email = settings?.contactEmail || "info@agredsghana.org";
+  const phone = settings?.contactPhone || "+233 (0) 302 779 458";
+  const address = settings?.address || "P.O. Box AN 7593, Accra – Ghana";
+  const socials = settings?.socialLinks || {};
+  const menu = navItems && navItems.length > 0 ? navItems : defaultFooterMenu;
+
+  const socialKeys =
+    Object.keys(socials).length > 0
+      ? Object.keys(socials)
+      : ["facebook", "twitter", "instagram"];
+
   return (
     <footer className="py-[60px]" style={{ backgroundColor: "#20212b", color: "#a9a9ab" }}>
       <div className="container mx-auto px-4">
@@ -31,8 +64,8 @@ export default function Footer() {
             <div className="footer-logo">
               <Link href="/">
                 <Image
-                  src="/images/logo_white.png"
-                  alt="AGREDS"
+                  src={logoLight}
+                  alt={siteName}
                   width={180}
                   height={60}
                   className="max-h-[50px] lg:max-h-[60px] w-auto h-auto"
@@ -40,21 +73,21 @@ export default function Footer() {
               </Link>
             </div>
             <ul className="flex p-0 mt-[27px] mb-[30px] sm:mb-0" style={{ color: "#fff" }}>
-              <li className="list-none mr-[40px]">
-                <a href="#" className="text-inherit hover:opacity-75 transition-opacity">
-                  <FacebookIcon />
-                </a>
-              </li>
-              <li className="list-none mr-[40px]">
-                <a href="#" className="text-inherit hover:opacity-75 transition-opacity">
-                  <TwitterIcon />
-                </a>
-              </li>
-              <li className="list-none">
-                <a href="#" className="text-inherit hover:opacity-75 transition-opacity">
-                  <InstagramIcon />
-                </a>
-              </li>
+              {socialKeys.map((s) => (
+                <li key={s} className="list-none mr-[40px]">
+                  <a
+                    href={socials[s] || "#"}
+                    target={socials[s] ? "_blank" : undefined}
+                    rel="noopener noreferrer"
+                    className="text-inherit hover:opacity-75 transition-opacity"
+                    aria-label={s}
+                  >
+                    {SocialIcon[s] || (
+                      <span className="text-xs uppercase">{s[0]}</span>
+                    )}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -63,20 +96,20 @@ export default function Footer() {
             <h4 className="text-[20px] font-bold mb-[20px]" style={{ color: "#fff" }}>Contacts</h4>
             <div className="mb-[30px] lg:mb-0">
               <p className="mb-0 leading-[32px]">
-                Assemblies of God Relief &amp; Development Services (AGREDS)
+                Assemblies of God Relief & Development Services ({siteName})
                 <br />
-                P.O. Box AN 7593, Accra &ndash; Ghana
+                {address}
               </p>
               <p className="mb-0 leading-[32px]">
                 Phone:{" "}
-                <a href="tel:+233302779458" className="text-inherit no-underline hover:opacity-75 transition-opacity">
-                  +233 (0) 302 779 458
+                <a href={`tel:${phone.replace(/\s/g, "")}`} className="text-inherit no-underline hover:opacity-75 transition-opacity">
+                  {phone}
                 </a>
               </p>
               <p className="mb-0 leading-[32px]">
                 Email:{" "}
-                <a href="mailto:info@agredsghana.org" className="text-inherit no-underline hover:opacity-75 transition-opacity">
-                  info@agredsghana.org
+                <a href={`mailto:${email}`} className="text-inherit no-underline hover:opacity-75 transition-opacity">
+                  {email}
                 </a>
               </p>
             </div>
@@ -84,9 +117,9 @@ export default function Footer() {
 
           {/* Menu */}
           <div>
-            <h4 className="text-[20px] font-bold mb-[20px]" style={{ color: "#fff" }}>Menu &amp; Links</h4>
+            <h4 className="text-[20px] font-bold mb-[20px]" style={{ color: "#fff" }}>Menu & Links</h4>
             <ul className="flex flex-wrap p-0 m-0 mb-[30px] sm:mb-0">
-              {footerMenu.map((item) => (
+              {menu.map((item) => (
                 <li key={item.label} className="list-none w-1/2">
                   <Link
                     href={item.href}
@@ -120,7 +153,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center md:items-baseline justify-between mt-[50px] md:mt-[70px]">
           <p className="mb-[15px] md:mb-0 text-center md:text-left text-[14px]" style={{ color: "#65656b" }}>
-            &copy; 2025 AGREDS. All Rights Reserved.
+            &copy; {new Date().getFullYear()} {siteName}. All Rights Reserved.
           </p>
           <div className="text-center md:text-right text-[14px]" style={{ color: "#65656b" }}>
             <Link href="/privacy" className="no-underline hover:underline" style={{ color: "inherit" }}>
@@ -128,7 +161,7 @@ export default function Footer() {
             </Link>
             <span className="px-[8px]">|</span>
             <Link href="/terms" className="no-underline hover:underline" style={{ color: "inherit" }}>
-              Terms &amp; Conditions
+              Terms & Conditions
             </Link>
           </div>
         </div>

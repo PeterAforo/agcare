@@ -1,7 +1,14 @@
 import { prisma } from "@/lib/prisma";
+import { getSessionUser, hasMinRole } from "@/lib/rbac";
 import SettingsForm from "./SettingsForm";
+import Forbidden from "@/components/admin/Forbidden";
 
 export default async function SettingsPage() {
+  const user = await getSessionUser();
+  if (!user || !hasMinRole(user.role, "ADMIN")) {
+    return <Forbidden message="Only administrators can manage site settings." />;
+  }
+
   const settings = await prisma.siteSettings.findFirst();
 
   return (

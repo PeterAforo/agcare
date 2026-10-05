@@ -2,9 +2,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import ItemActions from "@/components/admin/ItemActions";
+import SearchInput from "@/components/admin/SearchInput";
+import Pagination from "@/components/admin/Pagination";
+import { getPagination } from "@/lib/pagination";
 
-export default async function CausesPage() {
-  const causes = await prisma.cause.findMany({ orderBy: { order: "asc" } });
+export default async function CausesPage({ searchParams }: { searchParams: Promise<{ page?: string; q?: string }> }) {
+  const params = await searchParams;
+  const { page, q, take, skip } = getPagination(params);
+  const where = q
+    ? { OR: [
+        { title: { contains: q, mode: "insensitive" as const } },
+        { description: { contains: q, mode: "insensitive" as const } },
+      ] }
+    : {};
+  const [causes, total] = await Promise.all([
+    prisma.cause.findMany({ where, orderBy: { order: "asc" }, skip, take }),
+    prisma.cause.count({ where }),
+  ]);
 
   return (
     <div>
@@ -13,13 +27,16 @@ export default async function CausesPage() {
           <h1 className="text-2xl font-bold" style={{ color: "#343877" }}>Causes</h1>
           <p className="text-sm mt-1" style={{ color: "#9e9e9e" }}>Manage causes for the homepage slider</p>
         </div>
-        <Link
-          href="/admin/causes/new"
-          className="px-4 py-2 rounded-lg text-white text-sm font-semibold transition-transform hover:-translate-y-0.5"
-          style={{ backgroundColor: "#2ec774" }}
-        >
-          + Add Cause
-        </Link>
+        <div className="flex items-center gap-3">
+          <SearchInput q={q} action="/admin/causes" placeholder="Search causes…" />
+          <Link
+            href="/admin/causes/new"
+            className="px-4 py-2 rounded-lg text-white text-sm font-semibold transition-transform hover:-translate-y-0.5"
+            style={{ backgroundColor: "#2ec774" }}
+          >
+            + Add Cause
+          </Link>
+        </div>
       </div>
 
       {causes.length === 0 ? (
@@ -84,6 +101,7 @@ export default async function CausesPage() {
           </table>
         </div>
       )}
+      <Pagination page={page} total={total} pageSize={take} base="/admin/causes" params={{ q }} />
     </div>
   );
 }

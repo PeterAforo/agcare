@@ -8,7 +8,7 @@ const fields: FieldDef[] = [
   { name: "slug", label: "Slug", type: "text", required: true },
   { name: "excerpt", label: "Excerpt", type: "textarea" },
   { name: "content", label: "Content (HTML)", type: "textarea" },
-  { name: "image", label: "Featured Image URL", type: "text" },
+  { name: "image", label: "Featured Image", type: "image" },
   { name: "badge", label: "Badge / Category", type: "text", half: true },
   { name: "badgeColor", label: "Badge Color", type: "color", half: true },
   { name: "publishedAt", label: "Publish Date", type: "date", half: true },

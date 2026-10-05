@@ -7,7 +7,7 @@ const fields: FieldDef[] = [
   { name: "quote", label: "Quote", type: "textarea", required: true },
   { name: "authorName", label: "Author Name", type: "text", required: true, half: true },
   { name: "authorRole", label: "Author Role", type: "text", half: true },
-  { name: "avatar", label: "Avatar URL", type: "text" },
+  { name: "avatar", label: "Avatar", type: "image" },
   { name: "order", label: "Order", type: "number", half: true },
   { name: "isActive", label: "Status", type: "select", half: true, options: [{ label: "Active", value: "true" }, { label: "Inactive", value: "false" }] },
 ];

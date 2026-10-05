@@ -6,7 +6,7 @@ const fields: FieldDef[] = [
   { name: "slug", label: "Slug", type: "text", required: true, placeholder: "my-blog-post-title" },
   { name: "excerpt", label: "Excerpt", type: "textarea", placeholder: "Brief summary of the post..." },
   { name: "content", label: "Content (HTML)", type: "textarea" },
-  { name: "image", label: "Featured Image URL", type: "text", placeholder: "/images/blog_1.jpg" },
+  { name: "image", label: "Featured Image", type: "image", placeholder: "/images/blog_1.jpg" },
   { name: "badge", label: "Badge / Category", type: "text", half: true },
   { name: "badgeColor", label: "Badge Color", type: "color", half: true },
   { name: "publishedAt", label: "Publish Date", type: "date", half: true },

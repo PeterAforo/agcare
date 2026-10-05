@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import ImageUpload from "./ImageUpload";
 
 export interface FieldDef {
   name: string;
   label: string;
-  type: "text" | "textarea" | "number" | "email" | "select" | "date" | "color" | "url";
+  type: "text" | "textarea" | "number" | "email" | "select" | "date" | "color" | "url" | "image";
   required?: boolean;
   placeholder?: string;
   options?: { label: string; value: string }[];
@@ -88,7 +89,12 @@ export default function GenericForm({ fields, apiModel, initialData, mode, backH
               <label className="block text-sm font-semibold mb-1.5" style={{ color: "#343877" }}>
                 {field.label}
               </label>
-              {field.type === "textarea" ? (
+              {field.type === "image" ? (
+                <ImageUpload
+                  value={(form[field.name] as string) || ""}
+                  onChange={(url) => handleChange(field.name, url)}
+                />
+              ) : field.type === "textarea" ? (
                 <textarea
                   name={field.name}
                   required={field.required}

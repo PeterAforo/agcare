@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createHeroSlide, updateHeroSlide } from "./actions";
+import ImageUpload from "@/components/admin/ImageUpload";
 
 interface HeroSlideData {
   id?: string;
@@ -140,45 +141,26 @@ export default function HeroSlideForm({ initialData, mode }: Props) {
       </div>
 
       <div>
-        <label className="block text-sm font-semibold mb-1.5" style={{ color: "#343877" }}>
-          Image (Desktop)
-        </label>
-        <input
-          name="image"
-          required
+        <ImageUpload
+          label="Image (Desktop)"
           value={form.image}
-          onChange={handleChange}
-          placeholder="/images/promo_1.jpg"
-          className={inputClass}
-          style={{ borderColor: "#dee2e6" }}
+          onChange={(url) => setForm((prev) => ({ ...prev, image: url }))}
         />
       </div>
 
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-semibold mb-1.5" style={{ color: "#343877" }}>
-            Tablet Image
-          </label>
-          <input
-            name="tabletImage"
+          <ImageUpload
+            label="Tablet Image"
             value={form.tabletImage}
-            onChange={handleChange}
-            placeholder="/images/834promo_1.jpg"
-            className={inputClass}
-            style={{ borderColor: "#dee2e6" }}
+            onChange={(url) => setForm((prev) => ({ ...prev, tabletImage: url }))}
           />
         </div>
         <div>
-          <label className="block text-sm font-semibold mb-1.5" style={{ color: "#343877" }}>
-            Mobile Image
-          </label>
-          <input
-            name="mobileImage"
+          <ImageUpload
+            label="Mobile Image"
             value={form.mobileImage}
-            onChange={handleChange}
-            placeholder="/images/375promo_1.jpg"
-            className={inputClass}
-            style={{ borderColor: "#dee2e6" }}
+            onChange={(url) => setForm((prev) => ({ ...prev, mobileImage: url }))}
           />
         </div>
       </div>

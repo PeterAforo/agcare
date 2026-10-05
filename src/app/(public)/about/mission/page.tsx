@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import PageBanner from "@/components/public/PageBanner";
 
 export const metadata: Metadata = {
@@ -130,14 +131,14 @@ export default function MissionPage() {
             AGREDS bring hope and transformation to communities across Ghana.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <Link
               href="/get-involved/volunteer"
               className="inline-block px-8 py-3 rounded-full text-white font-bold text-sm uppercase tracking-wide transition-transform hover:-translate-y-0.5"
               style={{ backgroundColor: "#2ec774" }}
             >
               Volunteer
-            </a>
-            <a
+            </Link>
+            <Link
               href="/get-involved/donate"
               className="inline-block px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wide transition-transform hover:-translate-y-0.5"
               style={{
@@ -147,7 +148,7 @@ export default function MissionPage() {
               }}
             >
               Donate
-            </a>
+            </Link>
           </div>
         </div>
       </section>
