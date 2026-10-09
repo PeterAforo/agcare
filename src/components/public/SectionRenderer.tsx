@@ -212,7 +212,7 @@ function DataListSection({ title, items, type }: { title: string | null; items: 
   return (
     <section className="py-16 px-6 max-w-6xl mx-auto">
       {title && <h2 className="text-2xl md:text-3xl font-bold text-center mb-10" style={{ color: "#343877" }}>{title}</h2>}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {items.map((item) => (
           <div key={item.id} className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">
             {item.image && <img src={item.image} alt={item.title} className="w-full h-48 object-cover" />}
