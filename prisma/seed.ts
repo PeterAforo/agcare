@@ -106,7 +106,7 @@ async function main() {
           title: "Inclusive Basic Education",
           description:
             "Building classroom blocks, teachers' quarters and WASH facilities, training teachers, and strengthening SMCs and PTAs across 36 supported communities in the Northern and Northeast Regions.",
-          image: "/images/causes_3.jpg",
+          image: "/images/education/block.jpg",
           badge: "Education",
           badgeColor: "#49C2DF",
           goalAmount: 150000,
@@ -128,7 +128,7 @@ async function main() {
           title: "Economic Livelihood Empowerment",
           description:
             "Equipping vulnerable young women, refugees and returned migrants with vocational and entrepreneurial skills to escape the cycle of poverty.",
-          image: "/images/causes_1.jpg",
+          image: "/images/lifeline/soap-making-training-for-ag-women-in-tamale.jpg",
           badge: "Livelihoods",
           badgeColor: "#2EC774",
           goalAmount: 50000,
@@ -139,7 +139,7 @@ async function main() {
           title: "The Lifeline Project",
           description:
             "Protecting vulnerable children and young people from trafficking and exploitative labour through protection, rehabilitation, reintegration and prevention — running since 1999.",
-          image: "/images/causes_4.jpg",
+          image: "/images/lifeline/photo-4.jpg",
           badge: "Child Protection",
           badgeColor: "#F8AC3A",
           goalAmount: 25000,
@@ -160,7 +160,7 @@ async function main() {
           title: "Education Programme",
           description:
             "Improving access to quality kindergarten and primary education in under-served communities through school infrastructure, teacher capacity building, SMC/PTA strengthening, learning materials, WASH facilities and girl-child education advocacy — across 36 supported communities in the Northern and Northeast Regions with partners including Children Believe, ChorogUsan for Children and KOICA.",
-          image: "/images/projects_3.jpg",
+          image: "/images/education/education-model-early-childhood-education-centre.jpg",
           badge: "Education",
           badgeColor: "#49C2DF",
           goalAmount: 25000,
@@ -182,7 +182,7 @@ async function main() {
           title: "Community Infrastructure Programme",
           description:
             "In partnership with World Servants Netherlands, we facilitate community-led construction and rehabilitation of essential facilities — school blocks and teachers', doctors' and nurses' accommodation — strengthening rural communities' capacity to deliver education and healthcare.",
-          image: "/images/projects_1.jpg",
+          image: "/images/community-infrastructure/volunteers-busy-at-kokosiase-construction-site-2.jpg",
           badge: "Community Development",
           badgeColor: "#2EC774",
           goalAmount: 25000,
@@ -204,7 +204,7 @@ async function main() {
           title: "The Lifeline Project",
           description:
             "Since 1999, protecting vulnerable children and young people — especially girls aged 15–20 — from trafficking and exploitative labour through supervised care, counselling, literacy, vocational skills and business start-up kits. Active in La Nkwantanang Madina Municipal and Mion District with partners including Kerk in Actie.",
-          image: "/images/projects_5.jpg",
+          image: "/images/lifeline/skills-training.jpg",
           badge: "Child Protection",
           badgeColor: "#F8AC3A",
           goalAmount: 25000,
@@ -214,6 +214,47 @@ async function main() {
       ],
     });
     console.log("  ✅ Projects created");
+  }
+
+  // ─── Gallery ───────────────────────────────────────────
+  const galleryCount = await prisma.galleryImage.count();
+  if (galleryCount === 0) {
+    await prisma.galleryImage.createMany({
+      data: [
+        // Education
+        { image: "/images/education/block.jpg", caption: "Classroom Block", category: "Education", order: 0 },
+        { image: "/images/education/education-model-early-childhood-education-centre.jpg", caption: "Model Early Childhood Education Centre", category: "Education", order: 1 },
+        { image: "/images/education/education-opening-of-early-childhood-educationn-centre-at-namenboku.jpg", caption: "Opening of Early Childhood Education Centre at Namenboku", category: "Education", order: 2 },
+        { image: "/images/education/photo-0253.jpg", caption: "Education Programme Field Photo", category: "Education", order: 3 },
+        { image: "/images/education/school-health-session-education.jpg", caption: "School Health Session", category: "Education", order: 4 },
+        { image: "/images/education/photo-2026-03-26.jpg", caption: "Education Programme Activity", category: "Education", order: 5 },
+        // Community Infrastructure
+        { image: "/images/community-infrastructure/classroom-block-at-kokosiase.jpg", caption: "Classroom Block at Kokosiase", category: "Community Infrastructure", order: 6 },
+        { image: "/images/community-infrastructure/cultural-interactions-between-volunteers-and-community.jpg", caption: "Cultural Interactions Between Volunteers and Community", category: "Community Infrastructure", order: 7 },
+        { image: "/images/community-infrastructure/symbolic-handing-over-at-kokosiase.jpg", caption: "Symbolic Handing Over at Kokosiase", category: "Community Infrastructure", order: 8 },
+        { image: "/images/community-infrastructure/teachers-block-at-namiyela.jpg", caption: "Teachers' Block at Namiyela", category: "Community Infrastructure", order: 9 },
+        { image: "/images/community-infrastructure/volunteer-11-vrs-kokosiase-11-football-match.jpg", caption: "Volunteer 11 vs Kokosiase 11 Football Match", category: "Community Infrastructure", order: 10 },
+        { image: "/images/community-infrastructure/volunteers-at-construction-site-2.jpg", caption: "Volunteers at Construction Site", category: "Community Infrastructure", order: 11 },
+        { image: "/images/community-infrastructure/volunteers-at-construction-site-3.jpg", caption: "Volunteers at Construction Site", category: "Community Infrastructure", order: 12 },
+        { image: "/images/community-infrastructure/volunteers-at-construction-site-4.jpg", caption: "Volunteers at Construction Site", category: "Community Infrastructure", order: 13 },
+        { image: "/images/community-infrastructure/volunteers-at-construction-site-5.jpg", caption: "Volunteers at Construction Site", category: "Community Infrastructure", order: 14 },
+        { image: "/images/community-infrastructure/volunteers-at-construction-site-6.jpg", caption: "Volunteers at Construction Site", category: "Community Infrastructure", order: 15 },
+        { image: "/images/community-infrastructure/volunteers-busy-at-kokosiase-construction-site-2.jpg", caption: "Volunteers Busy at Kokosiase Construction Site", category: "Community Infrastructure", order: 16 },
+        { image: "/images/community-infrastructure/volunteerss-honoured-at-kokosiase.jpg", caption: "Volunteers Honoured at Kokosiase", category: "Community Infrastructure", order: 17 },
+        // Lifeline Project
+        { image: "/images/lifeline/photo-20210323-124217.jpg", caption: "Lifeline Project — Livelihoods Training", category: "Lifeline", order: 18 },
+        { image: "/images/lifeline/photo-20210324-150403.jpg", caption: "Lifeline Project — Livelihoods Training", category: "Lifeline", order: 19 },
+        { image: "/images/lifeline/photo-20210326-124930.jpg", caption: "Lifeline Project — Livelihoods Training", category: "Lifeline", order: 20 },
+        { image: "/images/lifeline/photo-20241023-105706.jpg", caption: "Lifeline Project — Livelihoods Training", category: "Lifeline", order: 21 },
+        { image: "/images/lifeline/photo-2.jpg", caption: "Lifeline Project Activity", category: "Lifeline", order: 22 },
+        { image: "/images/lifeline/photo-3.jpg", caption: "Lifeline Project Activity", category: "Lifeline", order: 23 },
+        { image: "/images/lifeline/photo-4.jpg", caption: "Lifeline Project Activity", category: "Lifeline", order: 24 },
+        { image: "/images/lifeline/photo-6.jpg", caption: "Lifeline Project Activity", category: "Lifeline", order: 25 },
+        { image: "/images/lifeline/skills-training.jpg", caption: "Skills Training — Lifeline Project", category: "Lifeline", order: 26 },
+        { image: "/images/lifeline/soap-making-training-for-ag-women-in-tamale.jpg", caption: "Soap Making Training for AG Women in Tamale", category: "Lifeline", order: 27 },
+      ],
+    });
+    console.log("  ✅ Gallery images created");
   }
 
   // ─── Events ────────────────────────────────────────────

@@ -9,7 +9,7 @@ const PROJECTS = [
   {
     id: "p1",
     type: "vertical" as const,
-    image: "/images/projects_1.jpg",
+    image: "/images/community-infrastructure/volunteers-busy-at-kokosiase-construction-site-2.jpg",
     badge: "Community Development",
     badgeColor: "#49C2DF",
     panelColor: "#2EC774",
@@ -39,8 +39,8 @@ const PROJECTS = [
   {
     id: "p3",
     type: "primary" as const,
-    image: "/images/projects_3.jpg",
-    badge: "Child Support",
+    image: "/images/education/block.jpg",
+    badge: "Education",
     badgeColor: "#F8AC3A",
     panelColor: "",
     title: "Education Programme",
@@ -54,7 +54,7 @@ const PROJECTS = [
   {
     id: "p4",
     type: "primary" as const,
-    image: "/images/projects_4.jpg",
+    image: "/images/lifeline/skills-training.jpg",
     badge: "Child Protection",
     badgeColor: "#2EC774",
     panelColor: "",
@@ -84,7 +84,7 @@ const PROJECTS = [
   {
     id: "p6",
     type: "primary" as const,
-    image: "/images/projects_6.jpg",
+    image: "/images/lifeline/soap-making-training-for-ag-women-in-tamale.jpg",
     badge: "Livelihoods",
     badgeColor: "#F36F8F",
     panelColor: "",

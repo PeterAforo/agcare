@@ -16,15 +16,15 @@ export default async function PhotosPage() {
 
   // Fallback images if gallery is empty
   const fallbackImages = [
-    { image: "/images/causes_1.jpg", caption: "Community Water Project", category: "Water & Sanitation" },
-    { image: "/images/causes_2.jpg", caption: "Health Outreach", category: "Health" },
-    { image: "/images/causes_3.jpg", caption: "Education Programme", category: "Education" },
-    { image: "/images/projects_1.jpg", caption: "Community Development", category: "Development" },
-    { image: "/images/projects_2.jpg", caption: "Women's Empowerment", category: "Empowerment" },
-    { image: "/images/projects_3.jpg", caption: "Relief Operations", category: "Relief" },
-    { image: "/images/projects_4.jpg", caption: "Youth Training", category: "Education" },
-    { image: "/images/projects_5.jpg", caption: "Peacebuilding Workshop", category: "Peacebuilding" },
-    { image: "/images/projects_6.jpg", caption: "Field Visit", category: "Development" },
+    { image: "/images/education/education-model-early-childhood-education-centre.jpg", caption: "Early Childhood Education Centre", category: "Education" },
+    { image: "/images/community-infrastructure/classroom-block-at-kokosiase.jpg", caption: "Classroom Block at Kokosiase", category: "Community Infrastructure" },
+    { image: "/images/lifeline/skills-training.jpg", caption: "Skills Training — Lifeline Project", category: "Lifeline" },
+    { image: "/images/community-infrastructure/teachers-block-at-namiyela.jpg", caption: "Teachers' Block at Namiyela", category: "Community Infrastructure" },
+    { image: "/images/education/school-health-session-education.jpg", caption: "School Health Session", category: "Education" },
+    { image: "/images/lifeline/soap-making-training-for-ag-women-in-tamale.jpg", caption: "Soap Making Training — AG Women, Tamale", category: "Lifeline" },
+    { image: "/images/community-infrastructure/symbolic-handing-over-at-kokosiase.jpg", caption: "Symbolic Handing Over at Kokosiase", category: "Community Infrastructure" },
+    { image: "/images/education/education-opening-of-early-childhood-educationn-centre-at-namenboku.jpg", caption: "Opening of Early Childhood Education Centre — Namenboku", category: "Education" },
+    { image: "/images/lifeline/photo-20241023-105706.jpg", caption: "Livelihoods Training — Lifeline Project", category: "Lifeline" },
   ];
 
   const gallery = images.length > 0 ? images : fallbackImages;

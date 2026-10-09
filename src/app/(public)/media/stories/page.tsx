@@ -13,7 +13,7 @@ const stories = [
     title: "From Dropout to Teacher: Ama's Story",
     excerpt:
       "Ama was forced to drop out of school at age 12. Through AG Care Ghana's education support programme, she completed school and is now a teacher in her community.",
-    image: "/images/causes_3.jpg",
+    image: "/images/education/education-model-early-childhood-education-centre.jpg",
     category: "Education",
     color: "#49C2DF",
   },
@@ -37,7 +37,7 @@ const stories = [
     title: "Vocational Training Empowers Young Women",
     excerpt:
       "Over 200 young women have graduated from AG Care Ghana's skills training programme in dressmaking, hairdressing, and food processing, starting their own businesses.",
-    image: "/images/projects_1.jpg",
+    image: "/images/lifeline/soap-making-training-for-ag-women-in-tamale.jpg",
     category: "Empowerment",
     color: "#efc940",
   },
