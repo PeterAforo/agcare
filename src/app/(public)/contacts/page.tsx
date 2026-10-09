@@ -3,9 +3,9 @@ import PageBanner from "@/components/public/PageBanner";
 import ContactForm from "@/components/public/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us | AGREDS",
+  title: "Contact Us | AG Care Ghana",
   description:
-    "Get in touch with AGREDS — reach us at our Accra office or send us a message online.",
+    "Get in touch with AG Care Ghana — reach us at our Abofu-Achimota, Accra head office or send us a message online.",
 };
 
 export default function ContactsPage() {
@@ -77,7 +77,11 @@ export default function ContactsPage() {
                       Office Address
                     </h4>
                     <p className="text-sm" style={{ color: "#555" }}>
-                      Assemblies of God Relief &amp; Development Services
+                      AG Care Ghana Head Office
+                      <br />
+                      P.O. Box CT482, Cantonments
+                      <br />
+                      15 Kobla Nelson Rd, Abofu-Achimota
                       <br />
                       Accra, Ghana
                     </p>
@@ -113,17 +117,17 @@ export default function ContactsPage() {
                     </h4>
                     <p className="text-sm" style={{ color: "#555" }}>
                       <a
-                        href="tel:+23330229062"
+                        href="tel:+233302966331"
                         className="hover:underline"
                       >
-                        +233 30 229 062
+                        +233 302 966 331
                       </a>
                       <br />
                       <a
-                        href="tel:+23330224507"
+                        href="tel:+233302966333"
                         className="hover:underline"
                       >
-                        +233 30 224 507
+                        +233 302 966 333
                       </a>
                     </p>
                   </div>
@@ -158,17 +162,10 @@ export default function ContactsPage() {
                     </h4>
                     <p className="text-sm" style={{ color: "#555" }}>
                       <a
-                        href="mailto:agreds@ighamail.com"
+                        href="mailto:info@agcareghana.org"
                         className="hover:underline"
                       >
-                        agreds@ighamail.com
-                      </a>
-                      <br />
-                      <a
-                        href="mailto:info@agredsghana.org"
-                        className="hover:underline"
-                      >
-                        info@agredsghana.org
+                        info@agcareghana.org
                       </a>
                     </p>
                   </div>
@@ -241,7 +238,7 @@ export default function ContactsPage() {
       {/* Map */}
       <section>
         <iframe
-          title="AGREDS Location"
+          title="AG Care Ghana Location"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.7228862036456!2d-0.187!3d5.6037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzYnMTMuMyJOIDDCsDExJzEzLjIiVw!5e0!3m2!1sen!2sgh!4v1600000000000"
           width="100%"
           height="400"

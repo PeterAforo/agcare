@@ -3,16 +3,16 @@ import Link from "next/link";
 import PageBanner from "@/components/public/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Reports | AGREDS",
+  title: "Reports | AG Care Ghana",
   description:
-    "AGREDS annual reports, programme reports, and impact documentation.",
+    "AG Care Ghana annual reports, programme reports, and impact documentation.",
 };
 
 export default function ReportsPage() {
   const reports = [
     {
       title: "Annual Report 2024",
-      desc: "A comprehensive overview of AGREDS activities, achievements, and financial performance for the year 2024.",
+      desc: "A comprehensive overview of AG Care Ghana activities, achievements, and financial performance for the year 2024.",
       year: "2024",
     },
     {
@@ -22,12 +22,12 @@ export default function ReportsPage() {
     },
     {
       title: "COVID-19 Response Report",
-      desc: "Detailed account of AGREDS emergency response during the COVID-19 pandemic, including communities reached and resources deployed.",
+      desc: "Detailed account of AG Care Ghana emergency response during the COVID-19 pandemic, including communities reached and resources deployed.",
       year: "2021",
     },
     {
       title: "Strategic Plan 2020–2025",
-      desc: "AGREDS five-year strategic plan outlining goals, programme priorities, and implementation strategies.",
+      desc: "AG Care Ghana five-year strategic plan outlining goals, programme priorities, and implementation strategies.",
       year: "2020",
     },
   ];
@@ -56,7 +56,7 @@ export default function ReportsPage() {
               Reports & Publications
             </h2>
             <p className="mt-3 max-w-xl mx-auto" style={{ color: "#555" }}>
-              Access AGREDS annual reports, programme reports, and strategic
+              Access AG Care Ghana annual reports, programme reports, and strategic
               documents. These publications reflect our commitment to
               transparency and accountability.
             </p>

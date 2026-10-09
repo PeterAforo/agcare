@@ -42,10 +42,10 @@ interface Props {
 
 export default function Footer({ navItems, settings }: Props) {
   const logoLight = settings?.logoLight || "/images/logo_white.png";
-  const siteName = settings?.siteName || "AGREDS";
-  const email = settings?.contactEmail || "info@agredsghana.org";
-  const phone = settings?.contactPhone || "+233 (0) 302 779 458";
-  const address = settings?.address || "P.O. Box AN 7593, Accra – Ghana";
+  const siteName = settings?.siteName || "AG Care Ghana";
+  const email = settings?.contactEmail || "info@agcareghana.org";
+  const phone = settings?.contactPhone || "+233 302 966 331";
+  const address = settings?.address || "P.O. Box CT482, Cantonments, Accra – Ghana";
   const socials = settings?.socialLinks || {};
   const menu = navItems && navItems.length > 0 ? navItems : defaultFooterMenu;
 
@@ -96,7 +96,7 @@ export default function Footer({ navItems, settings }: Props) {
             <h4 className="text-[20px] font-bold mb-[20px]" style={{ color: "#fff" }}>Contacts</h4>
             <div className="mb-[30px] lg:mb-0">
               <p className="mb-0 leading-[32px]">
-                Assemblies of God Relief & Development Services ({siteName})
+                {siteName} — Assemblies of God Church, Ghana
                 <br />
                 {address}
               </p>

@@ -19,7 +19,7 @@ export default function SettingsForm({ initialData }: { initialData?: SettingsDa
   const [saving, setSaving] = useState(false);
   const [form, setForm] = useState<SettingsData>(
     initialData || {
-      siteName: "AGREDS",
+      siteName: "AG Care Ghana",
       tagline: "",
       contactEmail: "",
       contactPhone: "",

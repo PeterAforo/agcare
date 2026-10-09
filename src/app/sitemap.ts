@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
 
-const BASE_URL = process.env.NEXT_PUBLIC_URL || "https://agredsghana.org";
+const BASE_URL = process.env.NEXT_PUBLIC_URL || "https://agcareghana.org";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogPosts = await prisma.blogPost.findMany({

@@ -15,11 +15,11 @@ return [
     'smtp_secure' => getenv('SMTP_SECURE') ?: 'tls',
 
     // From address (use an address authorized on your SMTP server)
-    'from_email' => getenv('MAIL_FROM_EMAIL') ?: 'no-reply@agredsghana.org',
-    'from_name' => getenv('MAIL_FROM_NAME') ?: 'AGREDS Website',
+    'from_email' => getenv('MAIL_FROM_EMAIL') ?: 'no-reply@agcareghana.org',
+    'from_name' => getenv('MAIL_FROM_NAME') ?: 'AG Care Ghana Website',
 
     // Where contact messages are delivered
-    'to_email' => getenv('MAIL_TO_EMAIL') ?: 'info@agredsghana.org',
+    'to_email' => getenv('MAIL_TO_EMAIL') ?: 'info@agcareghana.org',
 
     // CORS: the Next.js app origin. Use * to allow any.
     'allowed_origin' => getenv('MAILER_ALLOWED_ORIGIN') ?: '*',

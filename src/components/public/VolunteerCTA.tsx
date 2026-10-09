@@ -43,7 +43,7 @@ export default function VolunteerCTA() {
               vulnerable children and families.
             </h3>
             <p className="text-gray-600 leading-relaxed mb-0">
-              Volunteers are the heartbeat of AGREDS. Through your service, you help provide
+              Volunteers are the heartbeat of AG Care Ghana. Through your service, you help provide
               education for children, support for struggling families, health outreach for
               rural communities, and empowerment opportunities that transform lives. Together,
               we bring the compassion of Christ to those who need it most.

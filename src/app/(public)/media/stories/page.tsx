@@ -3,16 +3,16 @@ import Image from "next/image";
 import PageBanner from "@/components/public/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Success Stories | AGREDS",
+  title: "Success Stories | AG Care Ghana",
   description:
-    "Real stories of transformation — how AGREDS programmes are changing lives across Ghana.",
+    "Real stories of transformation — how AG Care Ghana programmes are changing lives across Ghana.",
 };
 
 const stories = [
   {
     title: "From Dropout to Teacher: Ama's Story",
     excerpt:
-      "Ama was forced to drop out of school at age 12. Through AGREDS' education support programme, she completed school and is now a teacher in her community.",
+      "Ama was forced to drop out of school at age 12. Through AG Care Ghana's education support programme, she completed school and is now a teacher in her community.",
     image: "/images/causes_3.jpg",
     category: "Education",
     color: "#49C2DF",
@@ -28,7 +28,7 @@ const stories = [
   {
     title: "Mobile Clinic Saves Lives in Upper East",
     excerpt:
-      "AGREDS mobile health clinics bring essential healthcare — including maternal care and immunizations — to remote communities in Upper East Region.",
+      "AG Care Ghana mobile health clinics bring essential healthcare — including maternal care and immunizations — to remote communities in Upper East Region.",
     image: "/images/causes_2.jpg",
     category: "Health",
     color: "#f58ca6",
@@ -36,7 +36,7 @@ const stories = [
   {
     title: "Vocational Training Empowers Young Women",
     excerpt:
-      "Over 200 young women have graduated from AGREDS' skills training programme in dressmaking, hairdressing, and food processing, starting their own businesses.",
+      "Over 200 young women have graduated from AG Care Ghana's skills training programme in dressmaking, hairdressing, and food processing, starting their own businesses.",
     image: "/images/projects_1.jpg",
     category: "Empowerment",
     color: "#efc940",
@@ -44,7 +44,7 @@ const stories = [
   {
     title: "Rebuilding After the Flood",
     excerpt:
-      "When floods destroyed homes in the Volta Region, AGREDS emergency teams delivered food, shelter, and psychosocial support to hundreds of affected families.",
+      "When floods destroyed homes in the Volta Region, AG Care Ghana emergency teams delivered food, shelter, and psychosocial support to hundreds of affected families.",
     image: "/images/projects_3.jpg",
     category: "Relief",
     color: "#f8ac3a",
@@ -52,7 +52,7 @@ const stories = [
   {
     title: "Peace Through Dialogue in Bawku",
     excerpt:
-      "AGREDS facilitated community peace dialogues in Bawku, bringing together rival groups and reducing violent incidents through sustained engagement.",
+      "AG Care Ghana facilitated community peace dialogues in Bawku, bringing together rival groups and reducing violent incidents through sustained engagement.",
     image: "/images/projects_5.jpg",
     category: "Peacebuilding",
     color: "#343877",
@@ -84,7 +84,7 @@ export default function StoriesPage() {
               Stories of Transformation
             </h2>
             <p className="mt-3 max-w-xl mx-auto" style={{ color: "#555" }}>
-              Behind every AGREDS programme are real people whose lives have been
+              Behind every AG Care Ghana programme are real people whose lives have been
               changed. Here are some of their stories.
             </p>
           </div>

@@ -5,9 +5,9 @@ import { prisma } from "@/lib/prisma";
 import PageBanner from "@/components/public/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Projects | AGREDS",
+  title: "Projects | AG Care Ghana",
   description:
-    "AGREDS projects — ongoing and completed initiatives delivering impact across Ghana.",
+    "AG Care Ghana projects — ongoing and completed initiatives delivering impact across Ghana.",
 };
 
 export default async function ProjectsPage() {

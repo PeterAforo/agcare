@@ -525,7 +525,7 @@ function SectionContentEditor({
             value={(content.items as string) || ""}
             onChange={(e) => onChange("items", e.target.value)}
             rows={5}
-            placeholder={'JSON array, e.g.:\n[{"question":"What is AGREDS?","answer":"AGREDS is..."}]'}
+            placeholder={'JSON array, e.g.:\n[{"question":"What is AG Care Ghana?","answer":"AG Care Ghana is..."}]'}
             className={`${inputClass} font-mono text-xs`}
             style={style}
           />

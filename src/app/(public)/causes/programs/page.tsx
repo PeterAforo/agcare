@@ -4,59 +4,56 @@ import Link from "next/link";
 import PageBanner from "@/components/public/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Programs | AGREDS",
+  title: "Programmes & Projects | AG Care Ghana",
   description:
-    "AGREDS programme areas — Health, Education, Child Development, Women's Empowerment, Community Development, and Humanitarian Relief.",
+    "AG Care Ghana's programmes — Education, Health Services, Community Infrastructure, Migration & Reintegration, and the Lifeline Project.",
 };
 
 const programs = [
   {
-    title: "Health & Medical Outreach",
-    slug: "health",
-    desc: "AGREDS supports clinics, hospitals, and mobile health outreach services delivering essential healthcare — including maternal health, HIV/AIDS prevention, malaria treatment, and health education — to remote and vulnerable families across Ghana.",
-    image: "/images/causes_2.jpg",
-    color: "#f58ca6",
-    stats: ["200+ outreach clinics", "50,000+ patients annually", "All 16 regions"],
-  },
-  {
-    title: "Education & Child Development",
+    title: "Education Programme",
     slug: "education",
-    desc: "Through pre-schools, literacy programmes, child development centres, and educational assistance, AGREDS helps vulnerable children stay in school, develop life skills, and build a foundation for a brighter future.",
+    tagline: "Access to quality education in under-served communities",
+    desc: "AG Care's Education Programme responds to poverty, inadequate infrastructure and teacher shortages that constrain access to education in rural Ghana. With special attention to kindergarten and primary education, our interventions include classroom blocks, teachers' quarters and toilet facilities; teacher training and professional development; School Management Committees and PTAs; teaching and learning materials; engagement with Municipal Assemblies; girl-child education advocacy; school WASH facilities; and livelihoods support for parents. Funding partners including Children Believe, ChorogUsan for Children and KOICA have shaped interventions across thirty-six (36) supported communities in the Northern and Northeast Regions — areas of greatest need where government services have been inadequate.",
     image: "/images/causes_3.jpg",
     color: "#49C2DF",
-    stats: ["50,000+ children enrolled", "100+ centres supported", "Literacy & numeracy programmes"],
+    stats: ["36 supported communities", "Northern & Northeast Regions", "School infrastructure, teacher training & WASH"],
   },
   {
-    title: "Women & Family Empowerment",
-    slug: "women",
-    desc: "AGREDS trains women in vocational skills, supports micro-enterprises, and runs family strengthening programmes that empower women as economic agents and community leaders.",
-    image: "/images/causes_1.jpg",
-    color: "#2ec774",
-    stats: ["15,000+ women trained", "5,000+ enterprises", "Gender-based violence prevention"],
+    title: "Health Services (AGHS)",
+    slug: "health",
+    tagline: "Compassionate, holistic, affordable healthcare since 1948",
+    desc: "Delivered through Assemblies of God Health Services (AGHS) — the oldest of our community mission programmes — we provide outpatient and inpatient care, maternal and child health, laboratory diagnostics, immunization and health education. As a member of the Christian Health Association of Ghana (CHAG), a network of over 300 Christian mission health facilities, we partner with the Government of Ghana to advance Universal Health Coverage and the Free Primary Health Care Programme. Our facilities — AG Hospital in Saboba, AG Health Centre in Nakpanduri, AG Kings Medical Centre in Bontanga and AG Eye Medical Centre in Akim-Ofoase — are staffed by about 600 qualified professionals, and run community outreach such as medical screenings and preventive health campaigns.",
+    image: "/images/causes_2.jpg",
+    color: "#f58ca6",
+    stats: ["4 health facilities", "~600 health professionals", "CHAG member"],
   },
   {
-    title: "Community Development",
-    slug: "community",
-    desc: "From boreholes and water systems to agricultural extension and livelihood programmes, AGREDS builds the infrastructure and capacity that rural communities need to thrive.",
+    title: "Community Infrastructure Programme",
+    slug: "community-infrastructure",
+    tagline: "Community-led facilities with World Servants Netherlands",
+    desc: "In partnership with World Servants Netherlands, this programme improves the living conditions, learning environment and resilience of under-served communities. Interventions include the construction and rehabilitation of essential facilities — school blocks, teachers', doctors' and nurses' accommodation — identified and driven by the communities themselves. Local stakeholders contribute to planning, implementation, supervision and maintenance, promoting ownership and sustainability, while AG Care Ghana provides local coordination, stakeholder engagement, monitoring and oversight.",
     image: "/images/projects_1.jpg",
     color: "#efc940",
-    stats: ["150+ water systems", "10,000+ farmers reached", "200+ communities"],
+    stats: ["With World Servants Netherlands", "Community-led delivery", "Schools & staff accommodation"],
   },
   {
-    title: "Humanitarian Relief & Emergency Response",
-    slug: "relief",
-    desc: "When disasters strike, AGREDS mobilises rapid response teams to deliver food, shelter, medical care, and psychosocial support to affected communities across Ghana.",
-    image: "/images/projects_3.jpg",
-    color: "#f8ac3a",
-    stats: ["Major disasters since 1990", "COVID-19 relief for 50,000+ households", "Conflict recovery"],
-  },
-  {
-    title: "Peacebuilding & Advocacy",
-    slug: "peace",
-    desc: "AGREDS promotes peacebuilding, conflict resolution, civic education, and advocacy for the rights of vulnerable groups — contributing to safer, more cohesive communities.",
+    title: "EU Migration, Return & Reintegration",
+    slug: "migration-reintegration",
+    tagline: "Rebuilding lives with dignity, safety and hope",
+    desc: "This project supports vulnerable migrants, returnees and their families returning from some European Union member countries. Through a holistic, person-centred approach we offer pre-departure counselling, airport pickup on request, vocational training, business start-up support, employment guidance, referrals to essential services, psycho-social support, family reintegration and mediation. Working closely with local communities, institutions and partners, we aim to reduce vulnerability, prevent distress-driven re-migration, and empower returnees to become active contributors to their families and communities.",
     image: "/images/projects_5.jpg",
     color: "#343877",
-    stats: ["100+ conflict-affected communities", "Youth leader training", "Child protection advocacy"],
+    stats: ["Livelihoods, education & wellbeing", "Psycho-social & family support", "Safe, sustainable reintegration"],
+  },
+  {
+    title: "The Lifeline Project",
+    slug: "lifeline",
+    tagline: "Protecting vulnerable children since 1999",
+    desc: "A long-standing intervention protecting vulnerable children and young people from exploitation, trafficking and harmful labour practices. The project identifies and supports trafficked and exploited girls — especially those aged 15–20 — providing supervised care, individual and group counselling, health and moral education, HIV/AIDS awareness, functional literacy, entrepreneurial training, and vocational skills in dressmaking, catering and beauty care. Graduates receive start-up kits and follow-up visits to support lasting independence. Prevention work with the Ghana Police Service, Department of Social Welfare, faith groups, transport unions and traditional leaders is currently active in La Nkwantanang Madina Municipal (Greater Accra) and Mion District (Northern Region), with support from partners including Kerk in Actie.",
+    image: "/images/causes_1.jpg",
+    color: "#2ec774",
+    stats: ["Running since 1999", "Protection, rehabilitation & prevention", "Greater Accra & Northern Region"],
   },
 ];
 
@@ -64,11 +61,11 @@ export default function ProgramsPage() {
   return (
     <>
       <PageBanner
-        title="Our Programs"
+        title="Our Programmes & Projects"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Causes", href: "/causes/programs" },
-          { label: "Programs" },
+          { label: "Programmes" },
         ]}
       />
 
@@ -83,12 +80,12 @@ export default function ProgramsPage() {
               What We Do
             </span>
             <h2 className="font-bold" style={{ fontSize: 32, color: "#343877" }}>
-              Programme Areas
+              Our Programmes & Projects
             </h2>
-            <p className="mt-3 max-w-xl mx-auto" style={{ color: "#555" }}>
-              AGREDS delivers life-changing programmes across six core areas,
-              bringing hope and practical support to vulnerable families and
-              communities across Ghana.
+            <p className="mt-3 max-w-2xl mx-auto" style={{ color: "#555" }}>
+              AG Care Ghana delivers on its mandate through five flagship
+              programmes — improving wellbeing, resilience and livelihoods for
+              vulnerable people and communities across Ghana.
             </p>
           </div>
 
@@ -117,7 +114,7 @@ export default function ProgramsPage() {
                       className="absolute top-4 left-4 text-white text-xs font-bold px-3 py-1 rounded"
                       style={{ backgroundColor: prog.color }}
                     >
-                      {prog.title.split(" ")[0]}
+                      {prog.tagline}
                     </div>
                   </div>
                 </div>

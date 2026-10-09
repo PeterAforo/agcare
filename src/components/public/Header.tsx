@@ -74,9 +74,9 @@ export default function Header({
   const items = navItems && navItems.length > 0 ? navItems : defaultNavItems;
   const logoDark = settings?.logoDark || "/images/logo_dark.png";
   const logoLight = settings?.logoLight || "/images/logo_white.png";
-  const email = settings?.contactEmail || "agreds@ighamail.com";
-  const phone1 = settings?.contactPhone || "+233 30 229 062";
-  const phone2 = settings?.contactPhone2 || "+233 30 224 507";
+  const email = settings?.contactEmail || "info@agcareghana.org";
+  const phone1 = settings?.contactPhone || "+233 302 966 331";
+  const phone2 = settings?.contactPhone2 || "+233 302 966 333";
   const socials = settings?.socialLinks || {};
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -113,7 +113,7 @@ export default function Header({
             <Link href="/" className="flex-shrink-0 py-4">
               <Image
                 src={isScrolled ? logoDark : logoLight}
-                alt={settings?.siteName || "AGREDS"}
+                alt={settings?.siteName || "AG Care Ghana"}
                 width={160}
                 height={50}
                 className="h-10 md:h-12 w-auto transition-all duration-300"
@@ -225,7 +225,7 @@ export default function Header({
               <div className="flex items-center justify-between p-5 border-b border-white/10">
                 <Image
                   src={logoLight}
-                  alt={settings?.siteName || "AGREDS"}
+                  alt={settings?.siteName || "AG Care Ghana"}
                   width={130}
                   height={40}
                   className="h-8 w-auto"

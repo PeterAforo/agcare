@@ -4,9 +4,9 @@ import Link from "next/link";
 import PageBanner from "@/components/public/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Volunteer | AGREDS",
+  title: "Volunteer | AG Care Ghana",
   description:
-    "Volunteer with AGREDS — join our mission to transform lives and build hope across Ghana.",
+    "Volunteer with AG Care Ghana — join our mission to transform lives and build hope across Ghana.",
 };
 
 export default function VolunteerPage() {
@@ -18,7 +18,7 @@ export default function VolunteerPage() {
     },
     {
       title: "Education & Tutoring",
-      desc: "Support children in AGREDS learning centres with tutoring, mentoring, and extracurricular activities.",
+      desc: "Support children in AG Care Ghana learning centres with tutoring, mentoring, and extracurricular activities.",
       icon: "📚",
     },
     {
@@ -72,7 +72,7 @@ export default function VolunteerPage() {
                 Your Time Can Transform Lives
               </h2>
               <p className="mb-4 leading-relaxed" style={{ color: "#555" }}>
-                Volunteers are at the heart of everything AGREDS does. Whether
+                Volunteers are at the heart of everything AG Care Ghana does. Whether
                 you have a few hours a week or want to commit to a longer-term
                 placement, your skills and passion can make a real difference in
                 the lives of vulnerable families across Ghana.
@@ -94,7 +94,7 @@ export default function VolunteerPage() {
               <div className="relative rounded-lg overflow-hidden shadow-xl" style={{ aspectRatio: "4/3" }}>
                 <Image
                   src="/images/promo_3.jpg"
-                  alt="AGREDS volunteers"
+                  alt="AG Care Ghana volunteers"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"

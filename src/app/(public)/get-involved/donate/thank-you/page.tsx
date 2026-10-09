@@ -4,7 +4,7 @@ import PageBanner from "@/components/public/PageBanner";
 import { CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Thank You | AGREDS",
+  title: "Thank You | AG Care Ghana",
   robots: { index: false },
 };
 

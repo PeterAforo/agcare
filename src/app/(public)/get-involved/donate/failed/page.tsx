@@ -4,7 +4,7 @@ import PageBanner from "@/components/public/PageBanner";
 import { XCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Donation Not Completed | AGREDS",
+  title: "Donation Not Completed | AG Care Ghana",
   robots: { index: false },
 };
 

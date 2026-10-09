@@ -43,7 +43,7 @@ export default function AdminLoginPage() {
         <div className="text-center mb-8">
           <Image
             src="/images/logo_white.png"
-            alt="AGREDS"
+            alt="AG Care Ghana"
             width={180}
             height={55}
             className="mx-auto h-12 w-auto mb-4"
@@ -87,7 +87,7 @@ export default function AdminLoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@agredsghana.org"
+                placeholder="admin@agcareghana.org"
                 className="w-full px-4 py-3 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-opacity-30 transition-colors"
                 style={{ borderColor: "#dee2e6", color: "#333" }}
                 autoComplete="email"
@@ -130,7 +130,7 @@ export default function AdminLoginPage() {
           className="text-center text-xs mt-6"
           style={{ color: "#65656b" }}
         >
-          &copy; {new Date().getFullYear()} AGREDS. All rights reserved.
+          &copy; {new Date().getFullYear()} AG Care Ghana. All rights reserved.
         </p>
       </div>
     </div>

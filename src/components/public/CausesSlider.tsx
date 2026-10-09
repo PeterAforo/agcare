@@ -82,11 +82,11 @@ export default function CausesSlider({ causes }: { causes: Cause[] }) {
               <span className="font-light">Focus Areas</span>
             </h2>
             <p className="text-[#777] leading-relaxed mb-0">
-              AGREDS delivers life-changing programmes in Health,
-              Education, Child Development, Women&rsquo;s Empowerment,
-              Community Development, and Humanitarian Relief&mdash;bringing
-              hope and practical support to vulnerable families and
-              underserved communities across Ghana.
+              AG Care Ghana delivers life-changing programmes in Education,
+              Health Services, Economic Livelihoods, Child Protection,
+              Community Infrastructure, and Migration &amp;
+              Reintegration&mdash;bringing hope and practical support to
+              vulnerable families and under-served communities across Ghana.
             </p>
           </div>
 

@@ -4,9 +4,9 @@ import Link from "next/link";
 import PageBanner from "@/components/public/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Profile | AGREDS",
+  title: "Profile | AG Care Ghana",
   description:
-    "Learn about AGREDS — the humanitarian and development arm of the Assemblies of God Church, Ghana.",
+    "Learn about AG Care Ghana — the humanitarian and development agency of the Assemblies of God Church, Ghana.",
 };
 
 export default function ProfilePage() {
@@ -36,28 +36,32 @@ export default function ProfilePage() {
                 className="font-bold mb-6"
                 style={{ fontSize: 32, color: "#343877", lineHeight: 1.25 }}
               >
-                Assemblies of God Relief &amp; Development Services
+                Assemblies of God Care — AG Care Ghana
               </h2>
               <p className="mb-4 leading-relaxed" style={{ color: "#555" }}>
                 <strong>
-                  AGREDS is the humanitarian and development arm of the
-                  Assemblies of God Church, Ghana — committed to fighting
-                  hunger, poverty, disease, illiteracy, and social injustice
-                  while restoring dignity and hope to vulnerable communities.
+                  AG Care Ghana — formerly the Assemblies of God Relief and
+                  Development Services (AG Care Ghana) — is the humanitarian and
+                  development agency of the Assemblies of God Church, Ghana.
                 </strong>
               </p>
               <p className="mb-4 leading-relaxed" style={{ color: "#555" }}>
-                Established as a faith-based non-governmental organization,
-                AGREDS operates across all 16 regions of Ghana, implementing
-                programmes in health, education, child development, women&apos;s
-                empowerment, community development, peacebuilding, and emergency
-                relief.
+                Formally established in 1990 and registered as a
+                non-governmental organisation in January 1991, AG Care Ghana is
+                a national, non-profit, non-discriminatory organisation serving
+                vulnerable and under-served communities irrespective of
+                religious, ethnic or social background. As the 5th registered
+                member of the Christian Health Association of Ghana (CHAG), we
+                work with the Government of Ghana, Assemblies of God structures,
+                communities, and international development partners including
+                UNICEF, UNHCR, UNDP, DANIDA, Robertson Foundation-USA, Kerk in
+                Actie, Children Believe, and World Servants Netherlands.
               </p>
               <p className="mb-6 leading-relaxed" style={{ color: "#555" }}>
-                Our approach integrates holistic, community-driven development
-                with Christian compassion — partnering with local churches,
-                government agencies, and international organizations to deliver
-                sustainable impact at scale.
+                With a staff strength of 595 across Ghana, we have positively
+                impacted tens of thousands of lives in more than 60 communities
+                through our education, health, and economic livelihood
+                empowerment programmes — Transforming Lives Together.
               </p>
               <Link
                 href="/about/mission"
@@ -71,7 +75,7 @@ export default function ProfilePage() {
               <div className="relative rounded-lg overflow-hidden shadow-xl" style={{ aspectRatio: "4/3" }}>
                 <Image
                   src="/images/about-us.jpg"
-                  alt="AGREDS team in the field"
+                  alt="AG Care Ghana team in the field"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -99,10 +103,10 @@ export default function ProfilePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { number: "30+", label: "Years of Service" },
-              { number: "16", label: "Regions Covered" },
-              { number: "1.2M+", label: "Lives Impacted" },
-              { number: "350+", label: "Communities Reached" },
+              { number: "1991", label: "Registered NGO Since" },
+              { number: "595", label: "Staff Across Ghana" },
+              { number: "200K+", label: "Lives Directly Impacted" },
+              { number: "60+", label: "Communities Served" },
             ].map((item) => (
               <div
                 key={item.label}
@@ -137,41 +141,30 @@ export default function ProfilePage() {
               What We Do
             </span>
             <h2 className="font-bold" style={{ fontSize: 32, color: "#343877" }}>
-              Core Programme Areas
+              Our Strategic Objectives
             </h2>
+            <p className="mt-3 max-w-2xl mx-auto" style={{ color: "#555" }}>
+              We deliver on our mandate through three strategic objectives —
+              contributing to SDG 1, 2, 4, 5, 8, 10 and 17.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Health & Medical Outreach",
-                desc: "Supporting clinics, hospitals, and mobile outreach services delivering essential healthcare to remote families.",
-                color: "#f58ca6",
-              },
-              {
-                title: "Education & Child Development",
-                desc: "Running pre-schools, literacy programmes, child development centres, and educational support for vulnerable children.",
+                title: "Quality Basic Education",
+                desc: "Promoting access to good quality, inclusive basic education in under-served communities — building school infrastructure in over 60 communities and strengthening the capacity of teachers, School Management Committees and PTAs.",
                 color: "#49C2DF",
               },
               {
-                title: "Women & Family Empowerment",
-                desc: "Vocational training, micro-enterprise support, and family strengthening initiatives for women and caregivers.",
+                title: "Accessible Health Care",
+                desc: "Providing quality preventive and curative health care through our four health facilities in Saboba, Nakpanduri, Bontanga and Akim-Ofoase — complementing Ghana's universal health and Free Primary Healthcare policy.",
+                color: "#f58ca6",
+              },
+              {
+                title: "Economic Livelihoods",
+                desc: "Supporting vulnerable groups to build capital assets and escape the cycle of poverty through vocational and entrepreneurial skills — transforming the lives of young women, African refugees in Ghana, and returned migrants.",
                 color: "#2ec774",
-              },
-              {
-                title: "Community Development",
-                desc: "Water, sanitation, agriculture, and livelihood programmes building resilient rural communities.",
-                color: "#efc940",
-              },
-              {
-                title: "Humanitarian Relief",
-                desc: "Emergency response, disaster relief, and recovery support for conflict- and disaster-affected populations.",
-                color: "#f8ac3a",
-              },
-              {
-                title: "Peacebuilding & Advocacy",
-                desc: "Conflict resolution, civic education, and advocacy for the rights of vulnerable groups and communities.",
-                color: "#343877",
               },
             ].map((area) => (
               <div

@@ -79,7 +79,7 @@ export default function AdminSidebar() {
         <Link href="/admin" className="flex items-center gap-3">
           <Image
             src="/images/logo_white.png"
-            alt="AGREDS"
+            alt="AG Care Ghana"
             width={130}
             height={40}
             className="h-8 w-auto"

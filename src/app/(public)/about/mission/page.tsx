@@ -3,9 +3,9 @@ import Link from "next/link";
 import PageBanner from "@/components/public/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Mission | AGREDS",
+  title: "Mission | AG Care Ghana",
   description:
-    "The mission of AGREDS — fighting hunger, poverty, disease, illiteracy, and social injustice across Ghana.",
+    "The mission of AG Care Ghana — to work with partners in the love of God to eliminate poverty.",
 };
 
 export default function MissionPage() {
@@ -34,54 +34,62 @@ export default function MissionPage() {
               className="font-bold mb-8"
               style={{ fontSize: 32, color: "#343877", lineHeight: 1.3 }}
             >
-              To fight hunger, poverty, disease, illiteracy, and social
-              injustice — empowering vulnerable children, women, families, and
-              entire communities across Ghana.
+              To work with partners in the love of God to eliminate poverty.
             </h2>
             <div
               className="w-16 h-1 mx-auto rounded-full mb-8"
               style={{ backgroundColor: "#efc940" }}
             />
             <p className="leading-relaxed text-lg" style={{ color: "#555" }}>
-              AGREDS exists to demonstrate the love and compassion of Christ
-              through practical, sustainable development programmes that
-              transform lives, restore dignity, and build resilient communities
-              across every region of Ghana.
+              AG Care Ghana exists to demonstrate Christian compassion through
+              practical responses to poverty, vulnerability and community needs —
+              Transforming Lives Together through health, education and economic
+              livelihood empowerment.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Mission Pillars */}
+      {/* Core Values */}
       <section style={{ backgroundColor: "#f8f9fa" }} className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-bold" style={{ fontSize: 28, color: "#343877" }}>
-              Mission Pillars
+              Our Core Values
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
               {
-                title: "Compassion",
-                desc: "Responding to human suffering with the love of Christ, providing practical relief and lasting support to the most vulnerable.",
+                title: "Respect & Fairness",
+                desc: "Treating every person — beneficiary, partner and staff — with dignity and equity, serving communities irrespective of religious, ethnic or social background.",
                 color: "#f58ca6",
               },
               {
-                title: "Empowerment",
-                desc: "Equipping communities with knowledge, skills, and resources to become self-reliant and agents of their own transformation.",
-                color: "#2ec774",
-              },
-              {
-                title: "Integrity",
-                desc: "Maintaining transparency, accountability, and ethical stewardship in all our operations and relationships.",
+                title: "Accountability & Transparency",
+                desc: "Maintaining rigorous stewardship and open reporting to donors, partners, communities and church leadership.",
                 color: "#343877",
               },
               {
-                title: "Partnership",
-                desc: "Collaborating with churches, governments, NGOs, and communities to maximise impact and reach more people in need.",
+                title: "Equal Participation",
+                desc: "Ensuring communities and vulnerable groups take part in shaping and owning the programmes that affect their lives.",
+                color: "#2ec774",
+              },
+              {
+                title: "Innovation",
+                desc: "Finding creative, practical and sustainable responses to poverty, vulnerability and community needs.",
+                color: "#49C2DF",
+              },
+              {
+                title: "Commitment & Partnerships",
+                desc: "Working hand-in-hand with the Church, the Government of Ghana, communities and development partners at home and abroad for lasting impact.",
                 color: "#efc940",
+              },
+              {
+                title: "Diversity & Human Rights",
+                desc: "Upholding the rights and dignity of every person and valuing diversity in all our interventions.",
+                color: "#f8ac3a",
               },
             ].map((pillar) => (
               <div
@@ -128,7 +136,8 @@ export default function MissionPage() {
             style={{ color: "#a9a9ab" }}
           >
             Whether through volunteering, donating, or partnering, you can help
-            AGREDS bring hope and transformation to communities across Ghana.
+            AG Care Ghana bring hope and transformation to communities across
+            Ghana.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

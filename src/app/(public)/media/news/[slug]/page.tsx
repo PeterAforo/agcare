@@ -12,9 +12,9 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = await prisma.blogPost.findUnique({ where: { slug } });
-  if (!post) return { title: "Not Found | AGREDS" };
+  if (!post) return { title: "Not Found | AG Care Ghana" };
   return {
-    title: `${post.title} | AGREDS`,
+    title: `${post.title} | AG Care Ghana`,
     description: post.excerpt || post.title,
   };
 }

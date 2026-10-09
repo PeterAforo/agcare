@@ -2,52 +2,47 @@ import type { Metadata } from "next";
 import PageBanner from "@/components/public/PageBanner";
 
 export const metadata: Metadata = {
-  title: "History | AGREDS",
+  title: "History | AG Care Ghana",
   description:
-    "The history of AGREDS — over three decades of humanitarian service across Ghana.",
+    "The history of AG Care Ghana — from the Assemblies of God's earliest health missions in 1948 to a national humanitarian and development agency.",
 };
 
 export default function HistoryPage() {
   const timeline = [
     {
+      year: "1948–1951",
+      title: "Missionary Roots",
+      desc: "The Assemblies of God's social and health interventions in Ghana begin, including the establishment of health facilities in the northern parts of the country — the earliest expression of the Church's commitment to Christian compassion in action.",
+    },
+    {
       year: "1990",
-      title: "Foundation",
-      desc: "AGREDS was established as the relief and development arm of the Assemblies of God Church, Ghana, to address the urgent needs of vulnerable communities.",
+      title: "Formal Establishment",
+      desc: "AG Care Ghana is formally established, providing an institutional framework through which the Assemblies of God Church, Ghana can coordinate and expand its relief, development and social action programmes.",
     },
     {
-      year: "1995",
-      title: "First Health Programmes",
-      desc: "Launched mobile health clinics and community health education in underserved rural areas across northern Ghana.",
+      year: "1991",
+      title: "NGO Registration",
+      desc: "Officially registered as a non-governmental organisation in January 1991, and later becomes the 5th registered member of the Christian Health Association of Ghana (CHAG).",
     },
     {
-      year: "2000",
-      title: "Child Development Expansion",
-      desc: "Partnered with international organisations to establish child development centres, reaching thousands of children with education and nutritional support.",
+      year: "1999",
+      title: "The Lifeline Project",
+      desc: "Launched in response to the growing problem of child trafficking, the Lifeline Project begins protecting vulnerable children and young people from exploitation — combining protection, rehabilitation, reintegration and prevention.",
     },
     {
-      year: "2005",
-      title: "Women's Empowerment Initiative",
-      desc: "Introduced vocational training and micro-enterprise development programmes targeting women and young mothers.",
+      year: "2000s",
+      title: "Growing Partnerships",
+      desc: "Working alongside the Government of Ghana and international development partners including UNICEF, UNHCR, UNDP, DANIDA, Robertson Foundation-USA, Kerk in Actie, Children Believe and World Servants Netherlands, programmes expand across health, education, livelihoods and community development.",
     },
     {
-      year: "2010",
-      title: "Nationwide Coverage",
-      desc: "Expanded operations to cover all regions of Ghana, with integrated programmes in health, education, and community development.",
+      year: "2010s",
+      title: "National Reach",
+      desc: "Interventions grow to include support for schools and teachers, healthcare delivery through four health facilities, skills development for vulnerable young people, child protection, community infrastructure, refugee management, peace and conflict transformation, and emergency relief.",
     },
     {
-      year: "2015",
-      title: "Peacebuilding & Advocacy",
-      desc: "Added peacebuilding, conflict resolution, and civic education to our programme portfolio in response to community needs.",
-    },
-    {
-      year: "2020",
-      title: "COVID-19 Emergency Response",
-      desc: "Mobilised rapid response teams to deliver PPE, food supplies, and health education to vulnerable communities during the pandemic.",
-    },
-    {
-      year: "Present",
-      title: "Continuing the Mission",
-      desc: "With over 350 communities reached and 1.2 million lives impacted, AGREDS continues to expand its reach and deepen its impact across Ghana.",
+      year: "Today",
+      title: "AG Care Ghana",
+      desc: "Formerly known as AG Care Ghana, AG Care Ghana continues as the humanitarian and development agency of the Assemblies of God Church, Ghana — with 595 staff, over 200,000 lives directly impacted, and programmes in more than 60 communities. Transforming Lives Together.",
     },
   ];
 
@@ -79,9 +74,12 @@ export default function HistoryPage() {
               Over Three Decades of Service
             </h2>
             <p className="leading-relaxed" style={{ color: "#555" }}>
-              Since 1990, AGREDS has grown from a small church-based relief
-              initiative to a leading faith-based development organisation
-              serving vulnerable communities across all 16 regions of Ghana.
+              From the Assemblies of God&apos;s earliest health missions in
+              northern Ghana to a national non-profit organisation, AG Care
+              Ghana has evolved into a vehicle for the Church&apos;s commitment
+              to holistic transformation — improving the wellbeing, resilience
+              and livelihoods of vulnerable people and communities across Ghana
+              and beyond its borders.
             </p>
           </div>
 

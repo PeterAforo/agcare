@@ -29,21 +29,21 @@ export default function AboutSection() {
               </span>
             </h2>
             <p className="font-bold text-gray-800 mb-5 leading-relaxed text-[15px]">
-              Assemblies of God Relief and Development Services (AGREDS) is the
-              humanitarian and development arm of the Assemblies of God Church,
-              Ghana&mdash; committed to fighting hunger, poverty, disease, illiteracy, and
-              social injustice while restoring dignity and hope to vulnerable
-              communities.
+              AG Care Ghana&mdash;formerly the Assemblies of God Relief and
+              Development Services (AGREDS)&mdash;is the humanitarian and
+              development agency of the Assemblies of God Church, Ghana, working
+              with partners in the love of God to eliminate poverty.
             </p>
             <p className="text-gray-500 mb-5 leading-relaxed text-[15px]">
-              For more than three decades, AGREDS has provided life-changing support across all
-              16 regions of Ghana through Christ-centered programmes in health, education, child
-              development, women&rsquo;s empowerment, community development, and emergency
-              relief for families affected by conflict and disasters.
+              Formally established in 1990 and registered as an NGO in 1991, AG
+              Care Ghana has directly impacted over 200,000 lives in more than
+              60 communities through programmes in education, health, child
+              protection, economic livelihoods, community infrastructure, and
+              humanitarian assistance.
             </p>
             <p className="text-gray-500 mb-10 leading-relaxed text-[15px]">
               Working through church networks, local volunteers, community structures, and
-              dedicated partners, AGREDS continues to build resilient communities&mdash;empowering
+              dedicated partners, AG Care Ghana continues to build resilient communities&mdash;empowering
               children to stay in school, training young women in employable skills,
               strengthening rural healthcare, and providing hope to displaced families and
               vulnerable groups.
@@ -77,7 +77,7 @@ export default function AboutSection() {
               <div className="absolute inset-[8%] overflow-hidden">
                 <Image
                   src="/images/about-us.jpg"
-                  alt="AGREDS community support"
+                  alt="AG Care Ghana community support"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 42vw"
@@ -89,7 +89,7 @@ export default function AboutSection() {
                   A Team Committed to Transforming Lives
                 </h4>
                 <p className="text-white/80 text-sm leading-relaxed mb-5 max-w-sm">
-                  Behind every AGREDS initiative is a dedicated network of volunteers, pastors,
+                  Behind every AG Care Ghana initiative is a dedicated network of volunteers, pastors,
                   community leaders, development workers, and field officers who share one
                   purpose &mdash; to extend the compassion of Christ through practical support,
                   empowerment, and hope for families across Ghana.

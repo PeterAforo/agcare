@@ -197,15 +197,15 @@ export default function HeroSlider({ slides }: { slides: HeroSlide[] }) {
           <div className="hidden lg:flex flex-col justify-center bg-gray-50 px-6 py-4">
             <p className="text-[10px] text-gray-400 uppercase tracking-wider font-bold mb-1">Phone Numbers</p>
             <div className="flex gap-4">
-              <a href="tel:+23330229062" className="text-xs text-primary font-bold hover:text-accent-yellow transition-colors">+233 30 229 062</a>
-              <a href="tel:+23330224507" className="text-xs text-accent-yellow font-bold hover:text-primary transition-colors">+233 30 224 507</a>
+              <a href="tel:+233302966331" className="text-xs text-primary font-bold hover:text-accent-yellow transition-colors">+233 302 966 331</a>
+              <a href="tel:+233302966333" className="text-xs text-accent-yellow font-bold hover:text-primary transition-colors">+233 302 966 333</a>
             </div>
           </div>
 
           {/* Email */}
           <div className="hidden lg:flex flex-col justify-center bg-gray-50 px-6 py-4 border-l border-gray-200">
             <p className="text-[10px] text-gray-400 uppercase tracking-wider font-bold mb-1">Email</p>
-            <a href="mailto:agreds@ighamail.com" className="text-xs text-primary font-bold hover:text-accent-yellow transition-colors">agreds@ighamail.com</a>
+            <a href="mailto:info@agcareghana.org" className="text-xs text-primary font-bold hover:text-accent-yellow transition-colors">info@agcareghana.org</a>
           </div>
 
           {/* Spacer */}

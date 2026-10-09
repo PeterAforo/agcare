@@ -51,7 +51,7 @@ export default function BlogSection({ posts }: { posts: BlogPost[] }) {
             News
           </span>
           <h2 className="text-[32px] lg:text-[40px] xl:text-[50px] font-bold tracking-[-.070em] leading-tight mb-0">
-            <span>AGREDS </span>
+            <span>AG Care Ghana </span>
             <span className="font-light">Updates</span>
           </h2>
         </div>

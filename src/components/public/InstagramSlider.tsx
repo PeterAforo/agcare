@@ -45,7 +45,7 @@ export default function InstagramSlider() {
               Testimonials
             </span>
             <h2 className="text-[32px] lg:text-[40px] xl:text-[50px] font-bold tracking-[-.070em] leading-tight mb-0" style={{ color: "#343877" }}>
-              <span>#AGREDS Instagram</span>
+              <span>#AGCareGhana Instagram</span>
             </h2>
           </motion.div>
 
@@ -90,7 +90,7 @@ export default function InstagramSlider() {
               <div style={{ paddingTop: "83.96%" }} />
               <Image
                 src={src}
-                alt={`AGREDS Instagram ${i + 1}`}
+                alt={`AG Care Ghana Instagram ${i + 1}`}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 16vw"

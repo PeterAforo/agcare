@@ -41,7 +41,7 @@ export default function EventsSection({ events }: { events: EventItem[] }) {
             Events
           </span>
           <h2 className="text-[32px] lg:text-[40px] xl:text-[50px] font-bold tracking-[-.070em] mb-5 leading-tight">
-            <span>AGREDS </span>
+            <span>AG Care Ghana </span>
             <span className="font-light">Upcoming Activities</span>
           </h2>
           <p className="text-gray-500 leading-relaxed text-[15px]">

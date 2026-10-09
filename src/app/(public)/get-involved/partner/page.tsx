@@ -5,9 +5,9 @@ import { prisma } from "@/lib/prisma";
 import PageBanner from "@/components/public/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Partner With Us | AGREDS",
+  title: "Partner With Us | AG Care Ghana",
   description:
-    "Partner with AGREDS — collaborate with us to deliver development programmes and humanitarian support across Ghana.",
+    "Partner with AG Care Ghana — collaborate with us to deliver development programmes and humanitarian support across Ghana.",
 };
 
 export default async function PartnerPage() {
@@ -44,7 +44,7 @@ export default async function PartnerPage() {
               Together, We Can Do More
             </h2>
             <p className="leading-relaxed text-lg" style={{ color: "#555" }}>
-              AGREDS partners with churches, government agencies, international
+              AG Care Ghana partners with churches, government agencies, international
               NGOs, corporate organizations, and community groups to deliver
               programmes that transform lives. We welcome partnerships at every
               level — from funding and technical support to implementation and

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import PageBanner from "@/components/public/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Governance | AGREDS",
+  title: "Governance | AG Care Ghana",
   description:
-    "AGREDS governance structure, leadership, and accountability framework.",
+    "AG Care Ghana's governance structure, leadership, and accountability framework.",
 };
 
 export default function GovernancePage() {
@@ -36,8 +36,8 @@ export default function GovernancePage() {
               Our Governance Structure
             </h2>
             <p className="mb-4 leading-relaxed" style={{ color: "#555" }}>
-              AGREDS operates under the oversight of the Assemblies of God
-              Church, Ghana, with a clear governance framework ensuring
+              AG Care Ghana operates under the oversight of the Assemblies of
+              God Church, Ghana, with a clear governance framework ensuring
               transparency, accountability, and effective stewardship of
               resources entrusted to us by donors, partners, and communities.
             </p>
@@ -64,7 +64,7 @@ export default function GovernancePage() {
             {[
               {
                 title: "Board of Directors",
-                desc: "Provides strategic oversight and policy direction. Comprises senior church leaders and independent professionals who ensure AGREDS fulfils its mandate with accountability.",
+                desc: "Provides strategic oversight and policy direction. Comprises senior church leaders and independent professionals who ensure AG Care Ghana fulfils its mandate with accountability.",
                 color: "#343877",
               },
               {
@@ -117,7 +117,7 @@ export default function GovernancePage() {
               Commitment to Accountability
             </h2>
             <p className="mb-4 leading-relaxed" style={{ color: "#555" }}>
-              AGREDS maintains rigorous financial controls, annual audits, and
+              AG Care Ghana maintains rigorous financial controls, annual audits, and
               transparent reporting to all stakeholders. We adhere to
               international standards of non-profit governance and are
               accountable to the communities we serve, our church leadership,

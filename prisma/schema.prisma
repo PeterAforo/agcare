@@ -35,7 +35,7 @@ model User {
 
 model SiteSettings {
   id            String   @id @default(cuid())
-  siteName      String   @default("AGREDS")
+  siteName      String   @default("AG Care Ghana")
   tagline       String?
   logoLight     String?
   logoDark      String?

@@ -14,15 +14,15 @@ export interface SiteSettingsData {
 }
 
 const FALLBACK: SiteSettingsData = {
-  siteName: "AGREDS",
-  tagline: null,
+  siteName: "AG Care Ghana",
+  tagline: "Transforming Lives Together",
   logoLight: "/images/logo_white.png",
   logoDark: "/images/logo_dark.png",
   favicon: null,
-  contactEmail: "info@agredsghana.org",
-  contactPhone: "+233 (0) 302 779 458",
-  contactPhone2: null,
-  address: "P.O. Box AN 7593, Accra – Ghana",
+  contactEmail: "info@agcareghana.org",
+  contactPhone: "+233 302 966 331",
+  contactPhone2: "+233 302 966 333",
+  address: "P.O. Box CT482, Cantonments, 15 Kobla Nelson Rd, Abofu-Achimota, Accra – Ghana",
   socialLinks: null,
 };
 

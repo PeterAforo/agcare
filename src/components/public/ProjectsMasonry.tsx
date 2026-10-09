@@ -10,12 +10,12 @@ const PROJECTS = [
     id: "p1",
     type: "vertical" as const,
     image: "/images/projects_1.jpg",
-    badge: "Water & Sanitation",
+    badge: "Community Development",
     badgeColor: "#49C2DF",
     panelColor: "#2EC774",
-    title: "Clean Water for Rural Communities",
+    title: "Community Infrastructure Programme",
     description:
-      "AGREDS works with local communities to provide access to safe drinking water, improved sanitation, and hygiene education to reduce disease and improve quality of life.",
+      "In partnership with World Servants Netherlands, AG Care Ghana facilitates community-led construction of school blocks and teachers', doctors' and nurses' accommodation in under-served communities.",
     goal: "25 000$",
     date: "23 Jan'19",
     colSpan: 4,
@@ -28,9 +28,9 @@ const PROJECTS = [
     badge: "Health Services",
     badgeColor: "#F36F8F",
     panelColor: "#9BC35E",
-    title: "Strengthening Rural Health Facilities",
+    title: "Health Services (AGHS)",
     description:
-      "Through Saboba Hospital, Nakpanduri Health Centre, and medical outreaches, AGREDS improves access to healthcare for marginalized and underserved populations.",
+      "Through AG Hospital Saboba, AG Health Centre Nakpanduri, AG Kings Medical Centre Bontanga and AG Eye Medical Centre Akim-Ofoase, AG Care Ghana delivers quality, affordable healthcare to under-served communities.",
     goal: "25 000$",
     date: "23 Jan'19",
     colSpan: 8,
@@ -43,9 +43,9 @@ const PROJECTS = [
     badge: "Child Support",
     badgeColor: "#F8AC3A",
     panelColor: "",
-    title: "Child Development & Educational Support",
+    title: "Education Programme",
     description:
-      "AGREDS supports pre-schools, literacy programmes, and child development initiatives to give vulnerable children the opportunity to learn, grow, and thrive.",
+      "Building classroom blocks, training teachers, and strengthening school governance across 36 supported communities in the Northern and Northeast Regions of Ghana.",
     goal: "25 000$",
     date: "23 Jan'19",
     colSpan: 8,
@@ -55,12 +55,12 @@ const PROJECTS = [
     id: "p4",
     type: "primary" as const,
     image: "/images/projects_4.jpg",
-    badge: "Education",
+    badge: "Child Protection",
     badgeColor: "#2EC774",
     panelColor: "",
-    title: "Girls' Vocational Training Support",
+    title: "The Lifeline Project",
     description:
-      "Through the Yendi Girls Vocational Institute, AGREDS equips young women with employable skills and economic empowerment opportunities.",
+      "Since 1999, protecting vulnerable children and young people from trafficking and exploitative labour through supervised care, counselling and vocational skills.",
     goal: "25 000$",
     date: "23 Jan'19",
     colSpan: 4,
@@ -73,9 +73,9 @@ const PROJECTS = [
     badge: "Community Development",
     badgeColor: "#2EC774",
     panelColor: "#E78F51",
-    title: "Empowering Families & Local Communities",
+    title: "EU Migration, Return & Reintegration",
     description:
-      "AGREDS strengthens rural families through economic empowerment, peacebuilding, family assistance programmes, and long-term development interventions.",
+      "Supporting returnees from EU member countries with counselling, vocational training, business start-up support and psycho-social care for sustainable reintegration.",
     goal: "25 000$",
     date: "23 Jan'19",
     colSpan: 8,
@@ -85,12 +85,12 @@ const PROJECTS = [
     id: "p6",
     type: "primary" as const,
     image: "/images/projects_6.jpg",
-    badge: "Relief",
+    badge: "Livelihoods",
     badgeColor: "#F36F8F",
     panelColor: "",
-    title: "Emergency Aid & Disaster Support",
+    title: "Economic Livelihood Empowerment",
     description:
-      "AGREDS provides food, shelter, and emergency assistance to communities affected by disasters, conflict, and displacement—including refugee and crisis areas.",
+      "Equipping vulnerable young women, refugees and returned migrants with vocational and entrepreneurial skills to build capital assets and escape the cycle of poverty.",
     goal: "25 000$",
     date: "23 Jan'19",
     colSpan: 4,
@@ -155,7 +155,7 @@ export default function ProjectsMasonry({ projects: _dbProjects }: { projects: u
             <span className="font-light">Projects</span>
           </h2>
           <p className="text-gray-600 leading-relaxed text-[15px]">
-            For more than three decades, AGREDS has carried out life-changing development
+            For more than three decades, AG Care Ghana has carried out life-changing development
             projects across Ghana&mdash;strengthening health systems, expanding education,
             empowering women, supporting vulnerable children, and bringing relief to
             disadvantaged communities.

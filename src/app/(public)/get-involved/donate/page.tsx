@@ -5,9 +5,9 @@ import PageBanner from "@/components/public/PageBanner";
 import DonateForm from "@/components/public/DonateForm";
 
 export const metadata: Metadata = {
-  title: "Donate | AGREDS",
+  title: "Donate | AG Care Ghana",
   description:
-    "Support AGREDS — your donation helps deliver health, education, relief, and development programmes across Ghana.",
+    "Support AG Care Ghana — your donation helps deliver health, education, relief, and development programmes across Ghana.",
 };
 
 export default function DonatePage() {
@@ -39,7 +39,7 @@ export default function DonatePage() {
     },
     {
       title: "General Fund",
-      desc: "Give to where the need is greatest — supporting all AGREDS programmes.",
+      desc: "Give to where the need is greatest — supporting all AG Care Ghana programmes.",
       color: "#343877",
     },
   ];
@@ -72,7 +72,7 @@ export default function DonatePage() {
               Every Gift Brings Hope to a Family in Need
             </h2>
             <p className="leading-relaxed text-lg mb-8" style={{ color: "#555" }}>
-              Your donation — no matter the size — directly supports AGREDS
+              Your donation — no matter the size — directly supports AG Care Ghana
               programmes in health, education, relief, and community development
               across Ghana. 100% of your gift goes towards our mission.
             </p>

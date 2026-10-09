@@ -4,9 +4,9 @@ import { prisma } from "@/lib/prisma";
 import PageBanner from "@/components/public/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Photo Gallery | AGREDS",
+  title: "Photo Gallery | AG Care Ghana",
   description:
-    "Browse photos from AGREDS programmes and events across Ghana.",
+    "Browse photos from AG Care Ghana programmes and events across Ghana.",
 };
 
 export default async function PhotosPage() {
@@ -63,7 +63,7 @@ export default async function PhotosPage() {
               >
                 <Image
                   src={item.image}
-                  alt={item.caption || "AGREDS photo"}
+                  alt={item.caption || "AG Care Ghana photo"}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

@@ -63,7 +63,7 @@ export async function POST(req: NextRequest) {
       reference,
       amount,
       currency,
-      description: cause ? `Donation — ${cause}` : "Donation to AGREDS",
+      description: cause ? `Donation — ${cause}` : "Donation to AG Care Ghana",
       customerName: name,
       customerEmail: email,
       customerPhone: phone || undefined,

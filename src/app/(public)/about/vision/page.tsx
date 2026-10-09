@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import PageBanner from "@/components/public/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Vision | AGREDS",
+  title: "Vision | AG Care Ghana",
   description:
-    "The vision of AGREDS — a Ghana where every community thrives with dignity, hope, and opportunity.",
+    "The vision of AG Care Ghana — transformed communities free from poverty.",
 };
 
 export default function VisionPage() {
@@ -33,33 +33,32 @@ export default function VisionPage() {
               className="font-bold mb-8"
               style={{ fontSize: 32, color: "#343877", lineHeight: 1.3 }}
             >
-              A Ghana where every community thrives with dignity, hope, and
-              opportunity — free from hunger, poverty, disease, and injustice.
+              Transformed Communities Free from Poverty.
             </h2>
             <div
               className="w-16 h-1 mx-auto rounded-full mb-8"
               style={{ backgroundColor: "#efc940" }}
             />
             <p className="leading-relaxed text-lg" style={{ color: "#555" }}>
-              We envision transformed communities where children grow up healthy
-              and educated, women are empowered, families are strong, and every
-              person has access to the resources and opportunities needed to live
-              a life of purpose and fulfilment.
+              We envision communities where wellbeing, resilience and
+              livelihoods are improved — where vulnerable people are equipped to
+              reach their full potential, and where transformation is holistic,
+              lasting and community-led.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Strategic Goals */}
+      {/* Strategic Objectives */}
       <section style={{ backgroundColor: "#f8f9fa" }} className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-bold" style={{ fontSize: 28, color: "#343877" }}>
-              Strategic Goals
+              Our Strategic Objectives
             </h2>
             <p className="mt-3 max-w-xl mx-auto" style={{ color: "#555" }}>
-              Our vision is guided by five strategic goals driving everything we
-              do across Ghana.
+              Three objectives drive our work — and our contribution to the
+              Sustainable Development Goals.
             </p>
           </div>
 
@@ -67,33 +66,18 @@ export default function VisionPage() {
             {[
               {
                 num: "01",
-                title: "Universal Health Access",
-                desc: "Ensure vulnerable communities have access to quality, affordable healthcare through clinics, outreach, and health education.",
+                title: "Inclusive Basic Education",
+                desc: "Promote access to good quality, inclusive basic education in under-served communities — improving learning environments through school infrastructure and building the capacity of teachers, School Management Committees and PTAs.",
               },
               {
                 num: "02",
-                title: "Quality Education for All",
-                desc: "Provide every child with access to education, from early childhood through secondary school, regardless of economic background.",
+                title: "Quality Health Care",
+                desc: "Provide quality, accessible preventive and curative health care through our four health facilities in Saboba, Nakpanduri, Bontanga and Akim-Ofoase — complementing Ghana's universal health and Free Primary Healthcare policy.",
               },
               {
                 num: "03",
-                title: "Economic Empowerment",
-                desc: "Equip women, youth, and families with vocational skills and micro-enterprise support for sustainable livelihoods.",
-              },
-              {
-                num: "04",
-                title: "Resilient Communities",
-                desc: "Build community infrastructure — water, sanitation, agriculture — that withstands shocks and supports long-term growth.",
-              },
-              {
-                num: "05",
-                title: "Peace & Social Cohesion",
-                desc: "Promote peacebuilding, conflict resolution, and civic engagement to create safe, harmonious communities.",
-              },
-              {
-                num: "06",
-                title: "Effective Emergency Response",
-                desc: "Maintain rapid-response capability to deliver life-saving relief to communities affected by disasters and conflict.",
+                title: "Sustainable Livelihoods",
+                desc: "Support vulnerable groups to improve their capital assets and escape the vicious cycle of poverty through sustainable economic livelihood empowerment — vocational and entrepreneurial skills for young women, refugees and returned migrants.",
               },
             ].map((goal) => (
               <div key={goal.num} className="bg-white rounded-lg p-8 shadow-sm">
@@ -114,6 +98,39 @@ export default function VisionPage() {
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* SDGs */}
+          <div className="max-w-3xl mx-auto text-center mt-14">
+            <h3
+              className="font-bold mb-4"
+              style={{ fontSize: 20, color: "#343877" }}
+            >
+              Contributing to the Global Goals
+            </h3>
+            <p className="mb-6 leading-relaxed" style={{ color: "#555" }}>
+              Through our interventions we contribute towards the achievement of
+              the Sustainable Development Goals:
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {[
+                "SDG 1 · No Poverty",
+                "SDG 2 · Zero Hunger",
+                "SDG 4 · Quality Education",
+                "SDG 5 · Gender Equality",
+                "SDG 8 · Decent Work",
+                "SDG 10 · Reduced Inequalities",
+                "SDG 17 · Partnerships",
+              ].map((sdg) => (
+                <span
+                  key={sdg}
+                  className="inline-block text-xs font-semibold px-4 py-2 rounded-full bg-white shadow-sm"
+                  style={{ color: "#343877" }}
+                >
+                  {sdg}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>

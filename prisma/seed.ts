@@ -11,8 +11,8 @@ async function main() {
   console.log("🌱 Seeding database...");
 
   // ─── Create Super Admin ────────────────────────────────
-  const adminEmail = process.env.ADMIN_EMAIL || "admin@agredsghana.org";
-  const adminPassword = process.env.ADMIN_PASSWORD || "Agreds@2025!";
+  const adminEmail = process.env.ADMIN_EMAIL || "admin@agcareghana.org";
+  const adminPassword = process.env.ADMIN_PASSWORD || "Agcare@2025!";
 
   const existingAdmin = await prisma.user.findUnique({
     where: { email: adminEmail },
@@ -22,7 +22,7 @@ async function main() {
     const hashedPassword = await hash(adminPassword, 12);
     await prisma.user.create({
       data: {
-        name: "AGREDS Admin",
+        name: "AG Care Ghana Admin",
         email: adminEmail,
         password: hashedPassword,
         role: Role.SUPER_ADMIN,
@@ -38,12 +38,12 @@ async function main() {
   if (!settings) {
     await prisma.siteSettings.create({
       data: {
-        siteName: "AGREDS",
-        tagline: "The Assemblies of God Relief and Development Services",
-        contactEmail: "info@agredsghana.org",
-        contactPhone: "+233 30 229 062",
-        contactPhone2: "+233 30 224 507",
-        address: "P.O. Box AN 7593, Accra - Ghana",
+        siteName: "AG Care Ghana",
+        tagline: "Transforming Lives Together",
+        contactEmail: "info@agcareghana.org",
+        contactPhone: "+233 302 966 331",
+        contactPhone2: "+233 302 966 333",
+        address: "P.O. Box CT482, Cantonments, 15 Kobla Nelson Rd, Abofu-Achimota, Accra - Ghana",
         socialLinks: {
           facebook: "#",
           twitter: "#",
@@ -62,7 +62,7 @@ async function main() {
         {
           title: "Transforming Lives.\nBuilding Hope Across Ghana.",
           subtitle:
-            "AGREDS fights hunger, poverty, disease, illiteracy, and social injustice—empowering vulnerable children, women, families, and entire communities through education, health services, relief support, and sustainable development rooted in Christian compassion.",
+            "AG Care Ghana works with partners in the love of God to eliminate poverty — empowering vulnerable communities through education, health care and economic livelihood empowerment across Ghana.",
           ctaText: "Learn More",
           ctaLink: "#about",
           image: "/images/promo_1.jpg",
@@ -73,7 +73,7 @@ async function main() {
         {
           title: "Empowering Communities,\nChanging Futures.",
           subtitle:
-            "From health outreach and child development to vocational training and disaster relief, AGREDS supports vulnerable communities across Ghana—restoring dignity and helping families rebuild their lives through sustainable, Christ-centered development programmes.",
+            "From inclusive basic education and quality health care to vocational skills and community infrastructure, AG Care Ghana supports vulnerable and under-served communities — restoring dignity and building resilience through sustainable, community-led development.",
           ctaText: "Explore",
           ctaLink: "#causes",
           image: "/images/promo_2.jpg",
@@ -84,7 +84,7 @@ async function main() {
         {
           title: "Volunteers Bringing\nHope to Communities.",
           subtitle:
-            "Through dedicated volunteers, church networks, and community partners, AGREDS delivers essential support to vulnerable families—touching lives through outreach clinics, child development programs, peacebuilding, and emergency relief efforts across Ghana.",
+            "With 595 staff and dedicated volunteers working alongside the Church, the Government of Ghana and partners at home and abroad, AG Care Ghana has directly impacted over 200,000 lives in more than 60 communities.",
           ctaText: "Join Us",
           ctaLink: "#volunteer",
           image: "/images/promo_3.jpg",
@@ -103,20 +103,20 @@ async function main() {
     await prisma.cause.createMany({
       data: [
         {
-          title: "Clean Water & Sanitation Support",
+          title: "Inclusive Basic Education",
           description:
-            "Providing safe drinking water, sanitation facilities, and hygiene education to underserved rural communities across Ghana.",
-          image: "/images/causes_1.jpg",
-          badge: "Water & Sanitation",
+            "Building classroom blocks, teachers' quarters and WASH facilities, training teachers, and strengthening SMCs and PTAs across 36 supported communities in the Northern and Northeast Regions.",
+          image: "/images/causes_3.jpg",
+          badge: "Education",
           badgeColor: "#49C2DF",
-          goalAmount: 25000,
-          pledgedAmount: 20350,
+          goalAmount: 150000,
+          pledgedAmount: 76500,
           order: 0,
         },
         {
-          title: "Rural Health & Medical Outreach",
+          title: "Quality Health Care (AGHS)",
           description:
-            "Supporting clinics, hospitals, and mobile outreach services to deliver essential healthcare to remote and vulnerable families.",
+            "Delivering preventive and curative care through our four health facilities in Saboba, Nakpanduri, Bontanga and Akim-Ofoase — staffed by about 600 health professionals.",
           image: "/images/causes_2.jpg",
           badge: "Health Services",
           badgeColor: "#F36F8F",
@@ -125,25 +125,25 @@ async function main() {
           order: 1,
         },
         {
-          title: "Education & Child Development",
+          title: "Economic Livelihood Empowerment",
           description:
-            "Supporting pre-schools, literacy programmes, child development centres, and educational assistance for vulnerable children.",
-          image: "/images/causes_3.jpg",
-          badge: "Education",
+            "Equipping vulnerable young women, refugees and returned migrants with vocational and entrepreneurial skills to escape the cycle of poverty.",
+          image: "/images/causes_1.jpg",
+          badge: "Livelihoods",
           badgeColor: "#2EC774",
-          goalAmount: 150000,
-          pledgedAmount: 76500,
+          goalAmount: 50000,
+          pledgedAmount: 25000,
           order: 2,
         },
         {
-          title: "Food & Family Assistance",
+          title: "The Lifeline Project",
           description:
-            "Providing nutritional support, family strengthening interventions, and emergency food relief to vulnerable households.",
+            "Protecting vulnerable children and young people from trafficking and exploitative labour through protection, rehabilitation, reintegration and prevention — running since 1999.",
           image: "/images/causes_4.jpg",
-          badge: "Food Support",
+          badge: "Child Protection",
           badgeColor: "#F8AC3A",
-          goalAmount: 50000,
-          pledgedAmount: 25000,
+          goalAmount: 25000,
+          pledgedAmount: 20350,
           order: 3,
         },
       ],
@@ -157,20 +157,20 @@ async function main() {
     await prisma.project.createMany({
       data: [
         {
-          title: "Clean Water for Rural Communities",
+          title: "Education Programme",
           description:
-            "AGREDS works with local communities to provide access to safe drinking water, improved sanitation, and hygiene education to reduce disease and improve quality of life.",
-          image: "/images/projects_1.jpg",
-          badge: "Water & Sanitation",
+            "Improving access to quality kindergarten and primary education in under-served communities through school infrastructure, teacher capacity building, SMC/PTA strengthening, learning materials, WASH facilities and girl-child education advocacy — across 36 supported communities in the Northern and Northeast Regions with partners including Children Believe, ChorogUsan for Children and KOICA.",
+          image: "/images/projects_3.jpg",
+          badge: "Education",
           badgeColor: "#49C2DF",
           goalAmount: 25000,
           layoutType: "VERTICAL",
           order: 0,
         },
         {
-          title: "Strengthening Rural Health Facilities",
+          title: "Health Services (AGHS)",
           description:
-            "Through Saboba Hospital, Nakpanduri Health Centre, and medical outreaches, AGREDS improves access to healthcare for marginalized and underserved populations.",
+            "Through Assemblies of God Health Services — AG Hospital Saboba, AG Health Centre Nakpanduri, AG Kings Medical Centre Bontanga and AG Eye Medical Centre Akim-Ofoase — we deliver compassionate, affordable, quality healthcare, community outreach and preventive health initiatives.",
           image: "/images/projects_2.jpg",
           badge: "Health Services",
           badgeColor: "#F36F8F",
@@ -179,48 +179,37 @@ async function main() {
           order: 1,
         },
         {
-          title: "Child Development & Educational Support",
+          title: "Community Infrastructure Programme",
           description:
-            "AGREDS supports pre-schools, literacy programmes, and child development initiatives to give vulnerable children the opportunity to learn, grow, and thrive.",
-          image: "/images/projects_3.jpg",
-          badge: "Child Support",
-          badgeColor: "#F8AC3A",
+            "In partnership with World Servants Netherlands, we facilitate community-led construction and rehabilitation of essential facilities — school blocks and teachers', doctors' and nurses' accommodation — strengthening rural communities' capacity to deliver education and healthcare.",
+          image: "/images/projects_1.jpg",
+          badge: "Community Development",
+          badgeColor: "#2EC774",
           goalAmount: 25000,
           layoutType: "PRIMARY",
           order: 2,
         },
         {
-          title: "Girls' Vocational Training Support",
+          title: "EU Migration, Return & Reintegration",
           description:
-            "Through the Yendi Girls Vocational Institute, AGREDS equips young women with employable skills and economic empowerment opportunities.",
+            "Supporting vulnerable migrants, returnees and their families returning from EU member countries through pre-departure counselling, airport pickup, vocational training, business start-up support, employment guidance, psycho-social support and family mediation.",
           image: "/images/projects_4.jpg",
-          badge: "Education",
-          badgeColor: "#2EC774",
+          badge: "Reintegration",
+          badgeColor: "#343877",
           goalAmount: 25000,
           layoutType: "PRIMARY",
           order: 3,
         },
         {
-          title: "Empowering Families & Local Communities",
+          title: "The Lifeline Project",
           description:
-            "AGREDS strengthens rural families through economic empowerment, peacebuilding, family assistance programmes, and long-term development interventions.",
+            "Since 1999, protecting vulnerable children and young people — especially girls aged 15–20 — from trafficking and exploitative labour through supervised care, counselling, literacy, vocational skills and business start-up kits. Active in La Nkwantanang Madina Municipal and Mion District with partners including Kerk in Actie.",
           image: "/images/projects_5.jpg",
-          badge: "Community Development",
-          badgeColor: "#2EC774",
+          badge: "Child Protection",
+          badgeColor: "#F8AC3A",
           goalAmount: 25000,
           layoutType: "HORIZONTAL",
           order: 4,
-        },
-        {
-          title: "Emergency Aid & Disaster Support",
-          description:
-            "AGREDS provides food, shelter, and emergency assistance to communities affected by disasters, conflict, and displacement—including refugee and crisis areas.",
-          image: "/images/projects_6.jpg",
-          badge: "Relief",
-          badgeColor: "#F36F8F",
-          goalAmount: 25000,
-          layoutType: "PRIMARY",
-          order: 5,
         },
       ],
     });
@@ -267,21 +256,21 @@ async function main() {
       data: [
         {
           quote:
-            "Through AGREDS' support, my children are now in school and receiving regular meals. The community programmes have restored hope to families like mine who were struggling. We are truly grateful for the love and dignity they bring to our lives.",
+            "Through AG Care Ghana's support, my children are now in school and receiving regular meals. The community programmes have restored hope to families like mine who were struggling. We are truly grateful for the love and dignity they bring to our lives.",
           authorName: "Amina Yakubu",
           authorRole: "Community Beneficiary",
           order: 0,
         },
         {
           quote:
-            "Volunteering with AGREDS has been one of the most fulfilling experiences of my life. Whether we are supporting children, assisting in rural clinics, or engaging communities, the impact is real and immediate. You see lives changing every day.",
+            "Volunteering with AG Care Ghana has been one of the most fulfilling experiences of my life. Whether we are supporting children, assisting in rural clinics, or engaging communities, the impact is real and immediate. You see lives changing every day.",
           authorName: "Samuel Owusu",
           authorRole: "Volunteer",
           order: 1,
         },
         {
           quote:
-            "AGREDS is a true extension of the church's mission. Their interventions in health, education, and family support have transformed entire communities. Partnering with them allows us to reach people with both the Gospel and practical compassion.",
+            "AG Care Ghana is a true extension of the church's mission. Their interventions in health, education, and family support have transformed entire communities. Partnering with them allows us to reach people with both the Gospel and practical compassion.",
           authorName: "Rev. Daniel Mensah",
           authorRole: "Partner Pastor",
           order: 2,
@@ -311,8 +300,8 @@ async function main() {
     await prisma.blogPost.createMany({
       data: [
         {
-          title: "AGREDS Commissions New Borehole to Support Rural Families",
-          slug: "agreds-commissions-new-borehole",
+          title: "AG Care Ghana Commissions New Borehole to Support Rural Families",
+          slug: "AG Care Ghana-commissions-new-borehole",
           excerpt:
             "A new clean water facility has been commissioned in the Northern Region, providing relief to households that previously walked long distances for water.",
           image: "/images/blog_1.jpg",
@@ -325,7 +314,7 @@ async function main() {
           title: "Literacy Support Programme Expands to 12 Additional Communities",
           slug: "literacy-support-programme-expands",
           excerpt:
-            "AGREDS has launched new literacy centres to support children and adults who lack access to basic education, empowering local communities through learning.",
+            "AG Care Ghana has launched new literacy centres to support children and adults who lack access to basic education, empowering local communities through learning.",
           image: "/images/blog_2.png",
           badge: "Education",
           badgeColor: "#2EC774",
@@ -333,10 +322,10 @@ async function main() {
           publishedAt: new Date("2025-10-02"),
         },
         {
-          title: "AGREDS Provides Emergency Relief to Flood-Affected Families",
+          title: "AG Care Ghana Provides Emergency Relief to Flood-Affected Families",
           slug: "emergency-relief-flood-affected-families",
           excerpt:
-            "In response to recent flooding, AGREDS mobilized emergency food supplies, clothing, and temporary shelter to support displaced families.",
+            "In response to recent flooding, AG Care Ghana mobilized emergency food supplies, clothing, and temporary shelter to support displaced families.",
           image: "/images/blog_3.png",
           badge: "Relief Support",
           badgeColor: "#F8AC3A",
@@ -347,7 +336,7 @@ async function main() {
           title: "Mobile Clinic Extends Healthcare to Hard-to-Reach Communities",
           slug: "mobile-clinic-extends-healthcare",
           excerpt:
-            "AGREDS' mobile medical outreach has delivered screenings, medicines, and maternal health support to rural areas lacking access to hospitals.",
+            "AG Care Ghana's mobile medical outreach has delivered screenings, medicines, and maternal health support to rural areas lacking access to hospitals.",
           image: "/images/blog_4.png",
           badge: "Health",
           badgeColor: "#F36F8F",
@@ -366,13 +355,13 @@ async function main() {
       data: {
         slug: "home",
         title: "Home",
-        metaDescription: "AGREDS — Assemblies of God Relief and Development Services, Ghana",
+        metaDescription: "AG Care Ghana — the humanitarian and development agency of the Assemblies of God Church, Ghana. Transforming Lives Together.",
         isPublished: true,
         template: "home",
         sections: {
           create: [
             { type: "HERO", title: "Hero Slider", order: 0 },
-            { type: "ABOUT", title: "About AGREDS", order: 1 },
+            { type: "ABOUT", title: "About AG Care Ghana", order: 1 },
             { type: "ICONS", title: "What We Do", order: 2 },
             { type: "CAUSES", title: "Our Causes", order: 3 },
             { type: "PROJECTS", title: "Our Projects", order: 4 },
@@ -391,12 +380,12 @@ async function main() {
       data: {
         slug: "about/profile",
         title: "Our Profile",
-        metaDescription: "Learn about AGREDS and our mission to empower communities in Ghana.",
+        metaDescription: "Learn about AG Care Ghana and our mission to empower communities in Ghana.",
         isPublished: true,
         sections: {
           create: [
             { type: "BANNER", title: "Page Banner", order: 0, content: { heading: "Our Profile", breadcrumb: true } },
-            { type: "RICH_TEXT", title: "About Content", order: 1, content: { html: "<p>AGREDS is the relief and development arm of the Assemblies of God Church, Ghana...</p>" } },
+            { type: "RICH_TEXT", title: "About Content", order: 1, content: { html: "<p>AG Care Ghana is the relief and development arm of the Assemblies of God Church, Ghana...</p>" } },
           ],
         },
       },
@@ -406,7 +395,7 @@ async function main() {
       data: {
         slug: "about/governance",
         title: "Governance",
-        metaDescription: "AGREDS leadership and governance structure.",
+        metaDescription: "AG Care Ghana leadership and governance structure.",
         isPublished: true,
         sections: {
           create: [
@@ -485,7 +474,7 @@ async function main() {
       data: { name: "Footer Navigation", location: "FOOTER" },
     });
     await prisma.menuItem.createMany({ data: [
-      { menuId: footerMenu.id, label: "About AGREDS", pageId: aboutProfile.id, order: 0 },
+      { menuId: footerMenu.id, label: "About AG Care Ghana", pageId: aboutProfile.id, order: 0 },
       { menuId: footerMenu.id, label: "Our Programs", pageId: causesPrograms.id, order: 1 },
       { menuId: footerMenu.id, label: "Volunteer", pageId: getInvolvedVolunteer.id, order: 2 },
       { menuId: footerMenu.id, label: "Donate", pageId: getInvolvedDonate.id, order: 3 },

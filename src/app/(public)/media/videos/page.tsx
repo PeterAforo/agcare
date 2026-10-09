@@ -2,40 +2,40 @@ import type { Metadata } from "next";
 import PageBanner from "@/components/public/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Videos | AGREDS",
+  title: "Videos | AG Care Ghana",
   description:
-    "Watch videos from AGREDS — programme highlights, impact stories, and event coverage.",
+    "Watch videos from AG Care Ghana — programme highlights, impact stories, and event coverage.",
 };
 
 const videos = [
   {
-    title: "AGREDS Mission Overview",
-    desc: "An introduction to AGREDS and our mission to transform lives across Ghana.",
+    title: "AG Care Ghana Mission Overview",
+    desc: "An introduction to AG Care Ghana and our mission to transform lives across Ghana.",
     youtubeId: "78xjPMY9rrA",
   },
   {
     title: "Health Outreach in Northern Ghana",
-    desc: "See how AGREDS mobile health clinics bring essential healthcare to remote communities.",
+    desc: "See how AG Care Ghana mobile health clinics bring essential healthcare to remote communities.",
     youtubeId: "78xjPMY9rrA",
   },
   {
     title: "Education Changes Lives",
-    desc: "Meet the children whose lives are being transformed through AGREDS education programmes.",
+    desc: "Meet the children whose lives are being transformed through AG Care Ghana education programmes.",
     youtubeId: "78xjPMY9rrA",
   },
   {
     title: "Women's Empowerment Programme",
-    desc: "Watch young women gain new skills and start businesses through AGREDS vocational training.",
+    desc: "Watch young women gain new skills and start businesses through AG Care Ghana vocational training.",
     youtubeId: "78xjPMY9rrA",
   },
   {
     title: "Emergency Relief Response",
-    desc: "AGREDS rapid response teams in action during natural disasters and emergencies.",
+    desc: "AG Care Ghana rapid response teams in action during natural disasters and emergencies.",
     youtubeId: "78xjPMY9rrA",
   },
   {
     title: "Community Development Impact",
-    desc: "How AGREDS builds resilient communities through water, sanitation, and agricultural programmes.",
+    desc: "How AG Care Ghana builds resilient communities through water, sanitation, and agricultural programmes.",
     youtubeId: "78xjPMY9rrA",
   },
 ];

@@ -2,75 +2,77 @@ import type { Metadata } from "next";
 import PageBanner from "@/components/public/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Impact Statistics | AGREDS",
+  title: "Impact | AG Care Ghana",
   description:
-    "AGREDS impact statistics — the numbers behind three decades of humanitarian service across Ghana.",
+    "AG Care Ghana's impact — the numbers behind over three decades of humanitarian and development service across Ghana.",
 };
 
 export default function ImpactPage() {
   const stats = [
-    { number: "1.2M+", label: "People Supported Since 1990", color: "#efc940" },
-    { number: "350+", label: "Communities Reached", color: "#2ec774" },
-    { number: "16", label: "Regions Covered", color: "#49C2DF" },
-    { number: "30+", label: "Years of Service", color: "#f58ca6" },
-    { number: "50,000+", label: "Children in Development Programmes", color: "#f8ac3a" },
-    { number: "15,000+", label: "Women Empowered Through Skills Training", color: "#343877" },
-    { number: "200+", label: "Health Outreach Programmes", color: "#2ec774" },
-    { number: "100+", label: "Schools & Learning Centres Supported", color: "#efc940" },
+    { number: "200,000+", label: "Lives Directly Impacted", color: "#efc940" },
+    { number: "60+", label: "Communities Served", color: "#2ec774" },
+    { number: "595", label: "Staff Across Ghana", color: "#49C2DF" },
+    { number: "1991", label: "Registered NGO Since", color: "#f58ca6" },
+    { number: "4", label: "Health Facilities", color: "#f8ac3a" },
+    { number: "~600", label: "Health Professionals", color: "#343877" },
+    { number: "36", label: "Education Communities Supported", color: "#2ec774" },
+    { number: "1999", label: "Lifeline Project Running Since", color: "#efc940" },
   ];
 
   const sectors = [
     {
-      title: "Health & Medical Outreach",
+      title: "Education",
       metrics: [
-        "200+ mobile health clinics conducted",
-        "50,000+ patients treated annually",
-        "HIV/AIDS, malaria, and maternal health programmes in all regions",
-      ],
-      color: "#f58ca6",
-    },
-    {
-      title: "Education & Child Development",
-      metrics: [
-        "50,000+ children enrolled in development programmes",
-        "100+ schools and learning centres supported",
-        "Literacy and numeracy programmes for out-of-school children",
+        "School infrastructure in 60+ communities over three decades",
+        "36 supported communities in the Northern and Northeast Regions",
+        "Teacher training, SMC/PTA strengthening, and learning materials",
+        "WASH facilities and girl-child education advocacy in schools",
       ],
       color: "#49C2DF",
     },
     {
-      title: "Women & Family Empowerment",
+      title: "Health Services (AGHS)",
       metrics: [
-        "15,000+ women trained in vocational skills",
-        "5,000+ micro-enterprises supported",
-        "Family strengthening and gender-based violence prevention",
+        "4 facilities: Saboba Hospital, Nakpanduri Health Centre, Kings Medical Centre (Bontanga), Eye Medical Centre (Akim-Ofoase)",
+        "~600 qualified healthcare professionals",
+        "Outpatient, inpatient, maternal & child health, laboratory and immunization services",
+        "Community outreach: medical screenings and health awareness campaigns",
+      ],
+      color: "#f58ca6",
+    },
+    {
+      title: "Economic Livelihoods",
+      metrics: [
+        "Thousands of vulnerable young women equipped with vocational and entrepreneurial skills",
+        "Hundreds of African refugees in Ghana and Ghanaian returned migrants supported",
+        "Small business start-up support and follow-up for graduates",
       ],
       color: "#2ec774",
     },
     {
-      title: "Community Development",
+      title: "Child Protection — Lifeline",
       metrics: [
-        "150+ boreholes and water systems constructed",
-        "Agricultural extension services to 10,000+ farmers",
-        "Sanitation and hygiene education in 200+ communities",
-      ],
-      color: "#efc940",
-    },
-    {
-      title: "Humanitarian Relief",
-      metrics: [
-        "Emergency response in all major disasters since 1990",
-        "COVID-19 relief to 50,000+ households",
-        "Displacement and conflict recovery programmes",
+        "Protecting children from trafficking and exploitative labour since 1999",
+        "Rehabilitation: counselling, literacy, vocational skills (dressmaking, catering, beauty care)",
+        "Active in La Nkwantanang Madina Municipal and Mion District",
       ],
       color: "#f8ac3a",
     },
     {
-      title: "Peacebuilding & Advocacy",
+      title: "Community Infrastructure",
       metrics: [
-        "Peace education in 100+ conflict-affected communities",
-        "Civic engagement training for youth leaders",
-        "Advocacy for child protection and women's rights",
+        "Community-led construction with World Servants Netherlands",
+        "School blocks, teachers', doctors' and nurses' accommodation",
+        "Local ownership through community participation in planning and maintenance",
+      ],
+      color: "#efc940",
+    },
+    {
+      title: "Migration & Reintegration",
+      metrics: [
+        "EU-supported return and reintegration for vulnerable migrants",
+        "Pre-departure counselling, airport pickup, vocational training",
+        "Psycho-social support, family mediation and business start-up support",
       ],
       color: "#343877",
     },
@@ -79,11 +81,11 @@ export default function ImpactPage() {
   return (
     <>
       <PageBanner
-        title="Impact Statistics"
+        title="Our Impact"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "About", href: "/about/profile" },
-          { label: "Impact Statistics" },
+          { label: "Impact" },
         ]}
       />
 
@@ -100,6 +102,11 @@ export default function ImpactPage() {
             <h2 className="font-bold" style={{ fontSize: 32, color: "#343877" }}>
               The Numbers Tell the Story
             </h2>
+            <p className="mt-3 max-w-2xl mx-auto" style={{ color: "#555" }}>
+              Together with the Church, the Government of Ghana and our partners
+              at home and abroad, AG Care Ghana has positively impacted tens of
+              thousands of lives across the country.
+            </p>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -132,7 +139,7 @@ export default function ImpactPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-bold" style={{ fontSize: 28, color: "#343877" }}>
-              Impact by Sector
+              Impact by Programme
             </h2>
           </div>
 

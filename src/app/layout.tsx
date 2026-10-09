@@ -16,27 +16,27 @@ const permanentMarker = Permanent_Marker({
 
 export const metadata: Metadata = {
   title: {
-    default: "AGREDS | Assemblies of God Relief and Development Services",
-    template: "%s | AGREDS",
+    default: "AG Care Ghana | Transforming Lives Together",
+    template: "%s | AG Care Ghana",
   },
   description:
-    "AGREDS fights hunger, poverty, disease, illiteracy, and social injustice — empowering vulnerable children, women, families, and entire communities across Ghana.",
+    "AG Care Ghana is the humanitarian and development agency of the Assemblies of God Church, Ghana — working with partners in the love of God to eliminate poverty through education, health and economic livelihood empowerment.",
   keywords:
-    "AGREDS, Ghana, relief, development, Assemblies of God, charity, humanitarian",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_URL || "https://agredsghana.org"),
+    "AG Care Ghana, Ghana, Assemblies of God, charity, humanitarian, development, education, health, livelihoods",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_URL || "https://agcareghana.org"),
   openGraph: {
     type: "website",
-    siteName: "AGREDS",
-    title: "AGREDS | Assemblies of God Relief and Development Services",
+    siteName: "AG Care Ghana",
+    title: "AG Care Ghana | Transforming Lives Together",
     description:
-      "Empowering vulnerable children, women, families, and communities across Ghana through health, education, relief, and sustainable development.",
+      "The humanitarian and development agency of the Assemblies of God Church, Ghana — empowering vulnerable communities through education, health and livelihood programmes.",
     images: [{ url: "/images/promo_1.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AGREDS | Assemblies of God Relief and Development Services",
+    title: "AG Care Ghana | Transforming Lives Together",
     description:
-      "Empowering vulnerable communities across Ghana through education, health, relief, and development.",
+      "Empowering vulnerable communities across Ghana through education, health and economic livelihood empowerment.",
     images: ["/images/promo_1.jpg"],
   },
 };
