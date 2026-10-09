@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 		<meta charset="UTF-8"/>
-		<meta name="description" content="The Assemblies of God Relief and Development Services (AGREDS)"/>
-		<meta name="keywords" content="Ghana The Assemblies of God Relief and Development Services (AGREDS)"/>
+		<meta name="description" content="AG Care Ghana"/>
+		<meta name="keywords" content="Ghana AG Care Ghana"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 		<link rel="shortcut icon" href="img/favicon.ico"/>
-		<title>The Assemblies of God Relief and Development Services</title>
+		<title>AG Care Ghana</title>
     
     <!-- slick styles -->
 <link rel="stylesheet" href="css/slick.css"/>
@@ -109,8 +109,8 @@
 						<li class="aside-menu__item"><a class="aside-menu__link" href="#">Contacts</a></li>
 					</ul> -->
 					<!-- aside menu end-->
-					<div class="aside-inner"><span class="aside-inner__title">Email</span><a class="aside-inner__link" href="mailto:agreds@ighamail.com">agreds@ighamail.com</a></div>
-					<div class="aside-inner"><span class="aside-inner__title">Phone numbers</span><a class="aside-inner__link" href="tel:+180012345678">+233 30 229 062</a><a class="aside-inner__link" href="tel:+18009756511">+233 30 224 507</a></div>
+					<div class="aside-inner"><span class="aside-inner__title">Email</span><a class="aside-inner__link" href="mailto:info@agcareghana.org">info@agcareghana.org</a></div>
+					<div class="aside-inner"><span class="aside-inner__title">Phone numbers</span><a class="aside-inner__link" href="tel:+233302966331">+233 302 966 331</a><a class="aside-inner__link" href="tel:+233302966333">+233 302 966 333</a></div>
 					<ul class="aside-socials">
 						<li class="aside-socials__item"><a class="aside-socials__link" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 						<li class="aside-socials__item"><a class="aside-socials__link" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
@@ -232,7 +232,7 @@
                     <!-- Subtitle -->
                     <div class="promo-slider__wrapper-2">
                         <p class="promo-slider__subtitle">
-                            AGREDS fights hunger, poverty, disease, illiteracy, and social injustice—empowering vulnerable
+                            AG Care Ghana fights hunger, poverty, disease, illiteracy, and social injustice—empowering vulnerable
                             children, women, families, and entire communities through education, health services, relief
                             support, and sustainable development rooted in Christian compassion.
                         </p>
@@ -276,7 +276,7 @@
                         <div class="promo-slider__wrapper-2">
                             <p class="promo-slider__subtitle">
                                 From health outreach and child development to vocational training and disaster relief, 
-                                AGREDS supports vulnerable communities across Ghana—restoring dignity and helping 
+                                AG Care Ghana supports vulnerable communities across Ghana—restoring dignity and helping 
                                 families rebuild their lives through sustainable, Christ-centered development programmes.
                             </p>
                         </div>
@@ -319,7 +319,7 @@
                         <div class="promo-slider__wrapper-2">
                             <p class="promo-slider__subtitle">
                                 Through dedicated volunteers, church networks, and community partners, 
-                                AGREDS delivers essential support to vulnerable families—touching lives 
+                                AG Care Ghana delivers essential support to vulnerable families—touching lives 
                                 through outreach clinics, child development programs, peacebuilding, 
                                 and emergency relief efforts across Ghana.
                             </p>
@@ -364,13 +364,13 @@
 
     <div class="promo-pannel__phones">
         <p class="promo-pannel__title">Phone Numbers</p>
-        <a class="promo-pannel__link" href="tel:+23330229062">+233 30 229 062</a>
-        <a class="promo-pannel__link" href="tel:+23330224507">+233 30 224 507</a>
+        <a class="promo-pannel__link" href="tel:+233302966331">+233 302 966 331</a>
+        <a class="promo-pannel__link" href="tel:+233302966333">+233 302 966 333</a>
     </div>
 
     <div class="promo-pannel__email">
         <p class="promo-pannel__title">Email</p>
-        <a class="promo-pannel__link" href="mailto:agreds@ighamail.com">agreds@ighamail.com</a>
+        <a class="promo-pannel__link" href="mailto:info@agcareghana.org">info@agcareghana.org</a>
     </div>
 </div>
 
@@ -406,7 +406,7 @@
                 <!-- Intro Paragraph -->
                 <p>
                     <strong>
-                        Assemblies of God Relief and Development Services (AGREDS) is the
+                        AG Care Ghana is the
                         humanitarian and development arm of the Assemblies of God Church, Ghana—
                         committed to fighting hunger, poverty, disease, illiteracy, and social injustice
                         while restoring dignity and hope to vulnerable communities.
@@ -415,7 +415,7 @@
 
                 <!-- Body Paragraphs -->
                 <p>
-                    For more than three decades, AGREDS has provided life-changing support across 
+                    For more than three decades, AG Care Ghana has provided life-changing support across 
                     all 16 regions of Ghana through Christ-centered programmes in health, education, 
                     child development, women’s empowerment, community development, and emergency 
                     relief for families affected by conflict and disasters.
@@ -423,7 +423,7 @@
 
                 <p>
                     Working through church networks, local volunteers, community structures, and
-                    dedicated partners, AGREDS continues to build resilient communities—empowering
+                    dedicated partners, AG Care Ghana continues to build resilient communities—empowering
                     children to stay in school, training young women in employable skills, strengthening
                     rural healthcare, and providing hope to displaced families and vulnerable groups.
                 </p>
@@ -442,7 +442,7 @@
     <h4 class="info-box__title">A Team Committed to Transforming Lives</h4>
 
     <p>
-        Behind every AGREDS initiative is a dedicated network of volunteers, pastors, community 
+        Behind every AG Care Ghana initiative is a dedicated network of volunteers, pastors, community 
         leaders, development workers, and field officers who share one purpose — to extend the 
         compassion of Christ through practical support, empowerment, and hope for families across Ghana.
     </p>
@@ -552,7 +552,7 @@
                 <span>Focus Areas</span>
             </h2>
             <p>
-                AGREDS delivers life-changing programmes in Health, Education, Child Development, 
+                AG Care Ghana delivers life-changing programmes in Health, Education, Child Development, 
                 Women’s Empowerment, Community Development, and Humanitarian Relief—bringing hope 
                 and practical support to vulnerable families and underserved communities across Ghana.
             </p>
@@ -779,7 +779,7 @@
                     <span class="heading__pre-title">What We Did</span>
                     <h2 class="heading__title"><span>Our</span> <span>Projects</span></h2>
                     <p class="no-margin-bottom">
-                        For more than three decades, AGREDS has carried out life-changing development 
+                        For more than three decades, AG Care Ghana has carried out life-changing development 
                         projects across Ghana—strengthening health systems, expanding education, empowering 
                         women, supporting vulnerable children, and bringing relief to disadvantaged communities.
                     </p>
@@ -802,7 +802,7 @@
                         <a href="#">Clean Water for Rural Communities</a>
                     </h3>
                     <p>
-                        AGREDS works with local communities to provide access to safe drinking water, 
+                        AG Care Ghana works with local communities to provide access to safe drinking water, 
                         improved sanitation, and hygiene education to reduce disease and improve quality of life.
                     </p>
                     <div class="projects-masonry__details-holder">
@@ -825,7 +825,7 @@
                         <a href="#">Strengthening Rural Health Facilities</a>
                     </h3>
                     <p>
-                        Through Saboba Hospital, Nakpanduri Health Centre, and medical outreaches, AGREDS 
+                        Through Saboba Hospital, Nakpanduri Health Centre, and medical outreaches, AG Care Ghana 
                         improves access to healthcare for marginalized and underserved populations.
                     </p>
                     <div class="projects-masonry__details-holder">
@@ -846,7 +846,7 @@
                         <a href="#">Child Development & Educational Support</a>
                     </h3>
                     <p>
-                        AGREDS supports pre-schools, literacy programmes, and child development initiatives 
+                        AG Care Ghana supports pre-schools, literacy programmes, and child development initiatives 
                         to give vulnerable children the opportunity to learn, grow, and thrive.
                     </p>
                     <div class="projects-masonry__details-holder">
@@ -867,7 +867,7 @@
                         <a href="#">Girls’ Vocational Training Support</a>
                     </h3>
                     <p>
-                        Through the Yendi Girls Vocational Institute, AGREDS equips young women with 
+                        Through the Yendi Girls Vocational Institute, AG Care Ghana equips young women with 
                         employable skills and economic empowerment opportunities.
                     </p>
                     <div class="projects-masonry__details-holder">
@@ -890,7 +890,7 @@
                         <a href="#">Empowering Families & Local Communities</a>
                     </h3>
                     <p>
-                        AGREDS strengthens rural families through economic empowerment, peacebuilding, 
+                        AG Care Ghana strengthens rural families through economic empowerment, peacebuilding, 
                         family assistance programmes, and long-term development interventions.
                     </p>
                     <div class="projects-masonry__details-holder">
@@ -911,7 +911,7 @@
                         <a href="#">Emergency Aid & Disaster Support</a>
                     </h3>
                     <p>
-                        AGREDS provides food, shelter, and emergency assistance to communities affected 
+                        AG Care Ghana provides food, shelter, and emergency assistance to communities affected 
                         by disasters, conflict, and displacement—including refugee and crisis areas.
                     </p>
                     <div class="projects-masonry__details-holder">
@@ -935,7 +935,7 @@
             <div class="col-12">
                 <div class="heading heading--primary heading--center">
                     <span class="heading__pre-title">Events</span>
-                    <h2 class="heading__title"><span>AGREDS</span> <span>Upcoming Activities</span></h2>
+                    <h2 class="heading__title"><span>AG Care Ghana</span> <span>Upcoming Activities</span></h2>
                     <p class="no-margin-bottom">
                         Join us as we engage communities across Ghana through health outreaches, 
                         child development forums, empowerment programmes, and humanitarian initiatives.
@@ -1027,7 +1027,7 @@
                 </h3>
 
                 <p>
-                    Volunteers are the heartbeat of AGREDS. Through your service, you help provide 
+                    Volunteers are the heartbeat of AG Care Ghana. Through your service, you help provide 
                     education for children, support for struggling families, health outreach for 
                     rural communities, and empowerment opportunities that transform lives. 
                     Together, we bring the compassion of Christ to those who need it most.
@@ -1080,7 +1080,7 @@
                         <div class="testimonials-slider__icon">“</div>
                         <div class="testimonials-slider__text">
                             <p>
-                                “Through AGREDS’ support, my children are now in school and receiving
+                                “Through AG Care Ghana’ support, my children are now in school and receiving
                                 regular meals. The community programmes have restored hope to families
                                 like mine who were struggling. We are truly grateful for the love and
                                 dignity they bring to our lives.”
@@ -1097,7 +1097,7 @@
                         <div class="testimonials-slider__icon">“</div>
                         <div class="testimonials-slider__text">
                             <p>
-                                “Volunteering with AGREDS has been one of the most fulfilling 
+                                “Volunteering with AG Care Ghana has been one of the most fulfilling 
                                 experiences of my life. Whether we are supporting children, assisting 
                                 in rural clinics, or engaging communities, the impact is real and 
                                 immediate. You see lives changing every day.”
@@ -1114,7 +1114,7 @@
                         <div class="testimonials-slider__icon">“</div>
                         <div class="testimonials-slider__text">
                             <p>
-                                “AGREDS is a true extension of the church’s mission. Their 
+                                “AG Care Ghana is a true extension of the church’s mission. Their 
                                 interventions in health, education, and family support have transformed 
                                 entire communities. Partnering with them allows us to reach people with 
 
@@ -1145,7 +1145,7 @@
                 <div class="heading heading--primary heading--center">
                     <span class="heading__pre-title">News</span>
                     <h2 class="heading__title no-margin-bottom">
-                        <span>AGREDS</span> <span>Updates</span>
+                        <span>AG Care Ghana</span> <span>Updates</span>
                     </h2>
                 </div>
             </div>
@@ -1162,7 +1162,7 @@
                     </div>
                     <div class="blog-item__content">
                         <h6 class="blog-item__title">
-                            <a href="#">AGREDS Commissions New Borehole to Support Rural Families</a>
+                            <a href="#">AG Care Ghana Commissions New Borehole to Support Rural Families</a>
                         </h6>
                         <p>
                             A new clean water facility has been commissioned in the Northern Region, 
@@ -1188,7 +1188,7 @@
                             <a href="#">Literacy Support Programme Expands to 12 Additional Communities</a>
                         </h6>
                         <p>
-                            AGREDS has launched new literacy centres to support children and adults who 
+                            AG Care Ghana has launched new literacy centres to support children and adults who 
                             lack access to basic education, empowering local communities through learning.
                         </p>
                     </div>
@@ -1208,10 +1208,10 @@
                     <div class="blog-item__content">
                         <span class="blog-item__badge" style="background-color: #F8AC3A;">Relief Support</span>
                         <h6 class="blog-item__title">
-                            <a href="#">AGREDS Provides Emergency Relief to Flood-Affected Families</a>
+                            <a href="#">AG Care Ghana Provides Emergency Relief to Flood-Affected Families</a>
                         </h6>
                         <p>
-                            In response to recent flooding, AGREDS mobilized emergency food supplies, 
+                            In response to recent flooding, AG Care Ghana mobilized emergency food supplies, 
                             clothing, and temporary shelter to support displaced families.
                         </p>
                     </div>
@@ -1236,7 +1236,7 @@
                             <a href="#">Mobile Clinic Extends Healthcare to Hard-to-Reach Communities</a>
                         </h6>
                         <p>
-                            AGREDS’ mobile medical outreach has delivered screenings, medicines, 
+                            AG Care Ghana’ mobile medical outreach has delivered screenings, medicines, 
                             and maternal health support to rural areas lacking access to hospitals.
                         </p>
                         <div class="blog-item__details">
@@ -1296,7 +1296,7 @@
 						<div class="row align-items-end margin-bottom">
 							<div class="col-md-7 col-lg-8">
 								<div class="heading heading--primary"><span class="heading__pre-title">Testimonials</span>
-									<h2 class="heading__title no-margin-bottom"><span>#AGREDS Instagram</span></h2>
+									<h2 class="heading__title no-margin-bottom"><span>#AG Care Ghana Instagram</span></h2>
 								</div>
 							</div>
 							<div class="col-md-5 col-lg-4 text-md-right">
@@ -1367,14 +1367,14 @@
 
                 <div class="footer-contacts">
                     <p class="footer-contacts__address">
-                        Assemblies of God Relief & Development Services (AGREDS)<br/>
-                        P.O. Box AN 7593, Accra – Ghana
+                        Assemblies of God Relief & Development Services (AG Care Ghana)<br/>
+                        P.O. Box CT482, Cantonments, Accra - Ghana
                     </p>
                     <p class="footer-contacts__phone">
-                        Phone: <a href="tel:+233302779458">+233 (0) 302 779 458</a>
+                        Phone: <a href="tel:+233302966331">+233 302 966 331</a>
                     </p>
                     <p class="footer-contacts__mail">
-                        Email: <a href="mailto:info@agredsghana.org">info@agredsghana.org</a>
+                        Email: <a href="mailto:info@agcareghana.org">info@agcareghana.org</a>
                     </p>
                 </div>
             </div>
@@ -1422,7 +1422,7 @@
         <div class="row align-items-baseline">
             <div class="col-md-6">
                 <p class="footer-copyright">
-                    © 2025 AGREDS. All Rights Reserved.
+                    © 2025 AG Care Ghana. All Rights Reserved.
                 </p>
             </div>
             <div class="col-md-6">

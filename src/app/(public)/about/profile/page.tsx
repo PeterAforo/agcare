@@ -40,9 +40,8 @@ export default function ProfilePage() {
               </h2>
               <p className="mb-4 leading-relaxed" style={{ color: "#555" }}>
                 <strong>
-                  AG Care Ghana — formerly the Assemblies of God Relief and
-                  Development Services (AG Care Ghana) — is the humanitarian and
-                  development agency of the Assemblies of God Church, Ghana.
+                  AG Care Ghana is the humanitarian and development agency of
+                  the Assemblies of God Church, Ghana.
                 </strong>
               </p>
               <p className="mb-4 leading-relaxed" style={{ color: "#555" }}>

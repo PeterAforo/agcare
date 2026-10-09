@@ -42,7 +42,7 @@ export default function HistoryPage() {
     {
       year: "Today",
       title: "AG Care Ghana",
-      desc: "Formerly known as AG Care Ghana, AG Care Ghana continues as the humanitarian and development agency of the Assemblies of God Church, Ghana — with 595 staff, over 200,000 lives directly impacted, and programmes in more than 60 communities. Transforming Lives Together.",
+      desc: "AG Care Ghana continues as the humanitarian and development agency of the Assemblies of God Church, Ghana — with 595 staff, over 200,000 lives directly impacted, and programmes in more than 60 communities. Transforming Lives Together.",
     },
   ];
 

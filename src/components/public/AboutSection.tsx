@@ -29,10 +29,9 @@ export default function AboutSection() {
               </span>
             </h2>
             <p className="font-bold text-gray-800 mb-5 leading-relaxed text-[15px]">
-              AG Care Ghana&mdash;formerly the Assemblies of God Relief and
-              Development Services (AGREDS)&mdash;is the humanitarian and
-              development agency of the Assemblies of God Church, Ghana, working
-              with partners in the love of God to eliminate poverty.
+              AG Care Ghana is the humanitarian and development agency of the
+              Assemblies of God Church, Ghana&mdash;working with partners in the
+              love of God to eliminate poverty.
             </p>
             <p className="text-gray-500 mb-5 leading-relaxed text-[15px]">
               Formally established in 1990 and registered as an NGO in 1991, AG
