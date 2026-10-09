@@ -178,7 +178,7 @@ export default function HeroSlider({ slides }: { slides: HeroSlide[] }) {
           {/* Video block */}
           <div className="hidden md:flex items-center gap-3 bg-white px-5 py-4">
             <div className="relative w-20 h-14 rounded overflow-hidden shrink-0">
-              <Image src="/images/video_block.jpg" alt="video" fill className="object-cover" sizes="80px" />
+              <Image src="/images/education/photo-2026-03-26.jpg" alt="video" fill className="object-cover" sizes="80px" />
             </div>
             <span className="text-primary text-xs font-bold leading-tight">
               Watch Our Mission Video

@@ -8,9 +8,24 @@ const prisma = new PrismaClient({
 });
 
 async function main() {
+  // ─── Hero slide images ──────────────────────────────────
+  const heroImages: Record<number, string> = {
+    0: "/images/community-infrastructure/symbolic-handing-over-at-kokosiase.jpg",
+    1: "/images/lifeline/soap-making-training-for-ag-women-in-tamale.jpg",
+    2: "/images/community-infrastructure/volunteers-busy-at-kokosiase-construction-site-2.jpg",
+  };
+  for (const [order, image] of Object.entries(heroImages)) {
+    const r = await prisma.heroSlide.updateMany({
+      where: { order: Number(order) },
+      data: { image, tabletImage: image, mobileImage: image },
+    });
+    console.log(`  heroSlide order ${order}: ${r.count} updated`);
+  }
+
   // ─── Cause images ───────────────────────────────────────
   const causeImages: Record<string, string> = {
     "Inclusive Basic Education": "/images/education/block.jpg",
+    "Quality Health Care (AGHS)": "/images/education/school-health-session-education.jpg",
     "Economic Livelihood Empowerment":
       "/images/lifeline/soap-making-training-for-ag-women-in-tamale.jpg",
     "The Lifeline Project": "/images/lifeline/photo-4.jpg",
@@ -24,13 +39,41 @@ async function main() {
   const projectImages: Record<string, string> = {
     "Education Programme":
       "/images/education/education-model-early-childhood-education-centre.jpg",
+    "Health Services (AGHS)": "/images/education/school-health-session-education.jpg",
     "Community Infrastructure Programme":
       "/images/community-infrastructure/volunteers-busy-at-kokosiase-construction-site-2.jpg",
+    "EU Migration, Return & Reintegration": "/images/lifeline/photo-20241023-105706.jpg",
     "The Lifeline Project": "/images/lifeline/skills-training.jpg",
   };
   for (const [title, image] of Object.entries(projectImages)) {
     const r = await prisma.project.updateMany({ where: { title }, data: { image } });
     console.log(`  project "${title}": ${r.count} updated`);
+  }
+
+  // ─── Event images ───────────────────────────────────────
+  const eventImages: Record<string, string> = {
+    "Rural Medical & Health Screening Outreach":
+      "/images/education/school-health-session-education.jpg",
+    "Women's Skill Training & Empowerment Workshop": "/images/lifeline/photo-2.jpg",
+    "Child Development & Family Support Forum": "/images/education/photo-2026-03-26.jpg",
+  };
+  for (const [title, image] of Object.entries(eventImages)) {
+    const r = await prisma.event.updateMany({ where: { title }, data: { image } });
+    console.log(`  event "${title}": ${r.count} updated`);
+  }
+
+  // ─── Blog post images ───────────────────────────────────
+  const blogImages: Record<string, string> = {
+    "agcare-commissions-new-borehole":
+      "/images/community-infrastructure/symbolic-handing-over-at-kokosiase.jpg",
+    "literacy-support-programme-expands": "/images/education/photo-0253.jpg",
+    "emergency-relief-flood-affected-families":
+      "/images/community-infrastructure/volunteers-at-construction-site-6.jpg",
+    "mobile-clinic-extends-healthcare": "/images/education/school-health-session-education.jpg",
+  };
+  for (const [slug, image] of Object.entries(blogImages)) {
+    const r = await prisma.blogPost.updateMany({ where: { slug }, data: { image } });
+    console.log(`  blogPost "${slug}": ${r.count} updated`);
   }
 
   // ─── Gallery ────────────────────────────────────────────

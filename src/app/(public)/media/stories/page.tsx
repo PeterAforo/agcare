@@ -21,7 +21,7 @@ const stories = [
     title: "Clean Water Changes Everything in Tamale",
     excerpt:
       "A new borehole in Tamale serves over 500 families, reducing waterborne diseases and freeing women and children from long daily treks to fetch water.",
-    image: "/images/causes_1.jpg",
+    image: "/images/community-infrastructure/volunteers-at-construction-site-3.jpg",
     category: "Water & Sanitation",
     color: "#2ec774",
   },
@@ -29,7 +29,7 @@ const stories = [
     title: "Mobile Clinic Saves Lives in Upper East",
     excerpt:
       "AG Care Ghana mobile health clinics bring essential healthcare — including maternal care and immunizations — to remote communities in Upper East Region.",
-    image: "/images/causes_2.jpg",
+    image: "/images/education/school-health-session-education.jpg",
     category: "Health",
     color: "#f58ca6",
   },
@@ -45,7 +45,7 @@ const stories = [
     title: "Rebuilding After the Flood",
     excerpt:
       "When floods destroyed homes in the Volta Region, AG Care Ghana emergency teams delivered food, shelter, and psychosocial support to hundreds of affected families.",
-    image: "/images/projects_3.jpg",
+    image: "/images/community-infrastructure/volunteers-at-construction-site-5.jpg",
     category: "Relief",
     color: "#f8ac3a",
   },
@@ -53,7 +53,7 @@ const stories = [
     title: "Peace Through Dialogue in Bawku",
     excerpt:
       "AG Care Ghana facilitated community peace dialogues in Bawku, bringing together rival groups and reducing violent incidents through sustained engagement.",
-    image: "/images/projects_5.jpg",
+    image: "/images/community-infrastructure/volunteer-11-vrs-kokosiase-11-football-match.jpg",
     category: "Peacebuilding",
     color: "#343877",
   },

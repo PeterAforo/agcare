@@ -75,7 +75,7 @@ export default function AboutSection() {
               {/* Background photo */}
               <div className="absolute inset-[8%] overflow-hidden">
                 <Image
-                  src="/images/about-us.jpg"
+                  src="/images/community-infrastructure/cultural-interactions-between-volunteers-and-community.jpg"
                   alt="AG Care Ghana community support"
                   fill
                   className="object-cover"

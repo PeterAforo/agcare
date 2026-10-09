@@ -73,7 +73,7 @@ export default function ProfilePage() {
             <div className="lg:w-1/2">
               <div className="relative rounded-lg overflow-hidden shadow-xl" style={{ aspectRatio: "4/3" }}>
                 <Image
-                  src="/images/about-us.jpg"
+                  src="/images/community-infrastructure/cultural-interactions-between-volunteers-and-community.jpg"
                   alt="AG Care Ghana team in the field"
                   fill
                   className="object-cover"

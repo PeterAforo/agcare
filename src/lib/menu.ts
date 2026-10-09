@@ -10,7 +10,9 @@ export interface MenuItemWithChildren {
 }
 
 export async function getMenuByLocation(location: "HEADER" | "FOOTER" | "SIDEBAR"): Promise<MenuItemWithChildren[]> {
-  const menu = await prisma.menu.findFirst({
+  let menu;
+  try {
+    menu = await prisma.menu.findFirst({
     where: { location, isActive: true },
     include: {
       items: {
@@ -26,7 +28,10 @@ export async function getMenuByLocation(location: "HEADER" | "FOOTER" | "SIDEBAR
         },
       },
     },
-  });
+    });
+  } catch {
+    return [];
+  }
 
   if (!menu) return [];
 

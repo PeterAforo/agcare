@@ -18,13 +18,13 @@ function InstagramIcon({ className }: { className?: string }) {
 }
 
 const images = [
-  "/images/ig_1.jpg",
-  "/images/ig_2.jpg",
-  "/images/ig_3.jpg",
-  "/images/ig_4.jpg",
-  "/images/ig_5.jpg",
-  "/images/ig_6.jpg",
-  "/images/ig_4.jpg",
+  "/images/education/photo-0253.jpg",
+  "/images/lifeline/photo-2.jpg",
+  "/images/lifeline/photo-3.jpg",
+  "/images/lifeline/photo-4.jpg",
+  "/images/community-infrastructure/volunteers-at-construction-site-4.jpg",
+  "/images/community-infrastructure/teachers-block-at-namiyela.jpg",
+  "/images/community-infrastructure/volunteer-11-vrs-kokosiase-11-football-match.jpg",
 ];
 
 export default function InstagramSlider() {

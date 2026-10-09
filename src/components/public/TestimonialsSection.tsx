@@ -28,7 +28,7 @@ export default function TestimonialsSection({
       {/* Parallax BG */}
       <div className="absolute inset-0">
         <Image
-          src="/images/testimonials_2.jpg"
+          src="/images/lifeline/photo-6.jpg"
           alt=""
           fill
           className="object-cover"

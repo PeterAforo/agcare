@@ -27,7 +27,12 @@ const FALLBACK: SiteSettingsData = {
 };
 
 export async function getSiteSettings(): Promise<SiteSettingsData> {
-  const settings = await prisma.siteSettings.findFirst();
+  let settings;
+  try {
+    settings = await prisma.siteSettings.findFirst();
+  } catch {
+    return FALLBACK;
+  }
   if (!settings) return FALLBACK;
 
   let socialLinks: Record<string, string> | null = null;

@@ -93,7 +93,7 @@ export default function VolunteerPage() {
             <div className="lg:w-1/2">
               <div className="relative rounded-lg overflow-hidden shadow-xl" style={{ aspectRatio: "4/3" }}>
                 <Image
-                  src="/images/promo_3.jpg"
+                  src="/images/community-infrastructure/volunteerss-honoured-at-kokosiase.jpg"
                   alt="AG Care Ghana volunteers"
                   fill
                   className="object-cover"

@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     title: "AG Care Ghana | Transforming Lives Together",
     description:
       "The humanitarian and development agency of the Assemblies of God Church, Ghana — empowering vulnerable communities through education, health and livelihood programmes.",
-    images: [{ url: "/images/promo_1.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/images/community-infrastructure/symbolic-handing-over-at-kokosiase.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "AG Care Ghana | Transforming Lives Together",
     description:
       "Empowering vulnerable communities across Ghana through education, health and economic livelihood empowerment.",
-    images: ["/images/promo_1.jpg"],
+    images: ["/images/community-infrastructure/symbolic-handing-over-at-kokosiase.jpg"],
   },
 };
 

@@ -65,9 +65,9 @@ async function main() {
             "AG Care Ghana works with partners in the love of God to eliminate poverty — empowering vulnerable communities through education, health care and economic livelihood empowerment across Ghana.",
           ctaText: "Learn More",
           ctaLink: "#about",
-          image: "/images/promo_1.jpg",
-          tabletImage: "/images/834promo_1.jpg",
-          mobileImage: "/images/375promo_1.jpg",
+          image: "/images/community-infrastructure/symbolic-handing-over-at-kokosiase.jpg",
+          tabletImage: "/images/community-infrastructure/symbolic-handing-over-at-kokosiase.jpg",
+          mobileImage: "/images/community-infrastructure/symbolic-handing-over-at-kokosiase.jpg",
           order: 0,
         },
         {
@@ -76,9 +76,9 @@ async function main() {
             "From inclusive basic education and quality health care to vocational skills and community infrastructure, AG Care Ghana supports vulnerable and under-served communities — restoring dignity and building resilience through sustainable, community-led development.",
           ctaText: "Explore",
           ctaLink: "#causes",
-          image: "/images/promo_2.jpg",
-          tabletImage: "/images/834promo_2.jpg",
-          mobileImage: "/images/375promo_2.jpg",
+          image: "/images/lifeline/soap-making-training-for-ag-women-in-tamale.jpg",
+          tabletImage: "/images/lifeline/soap-making-training-for-ag-women-in-tamale.jpg",
+          mobileImage: "/images/lifeline/soap-making-training-for-ag-women-in-tamale.jpg",
           order: 1,
         },
         {
@@ -87,9 +87,9 @@ async function main() {
             "With 595 staff and dedicated volunteers working alongside the Church, the Government of Ghana and partners at home and abroad, AG Care Ghana has directly impacted over 200,000 lives in more than 60 communities.",
           ctaText: "Join Us",
           ctaLink: "#volunteer",
-          image: "/images/promo_3.jpg",
-          tabletImage: "/images/834promo_3.jpg",
-          mobileImage: "/images/375promo_3.jpg",
+          image: "/images/community-infrastructure/volunteers-busy-at-kokosiase-construction-site-2.jpg",
+          tabletImage: "/images/community-infrastructure/volunteers-busy-at-kokosiase-construction-site-2.jpg",
+          mobileImage: "/images/community-infrastructure/volunteers-busy-at-kokosiase-construction-site-2.jpg",
           order: 2,
         },
       ],
@@ -117,7 +117,7 @@ async function main() {
           title: "Quality Health Care (AGHS)",
           description:
             "Delivering preventive and curative care through our four health facilities in Saboba, Nakpanduri, Bontanga and Akim-Ofoase — staffed by about 600 health professionals.",
-          image: "/images/causes_2.jpg",
+          image: "/images/education/school-health-session-education.jpg",
           badge: "Health Services",
           badgeColor: "#F36F8F",
           goalAmount: 14000,
@@ -171,7 +171,7 @@ async function main() {
           title: "Health Services (AGHS)",
           description:
             "Through Assemblies of God Health Services — AG Hospital Saboba, AG Health Centre Nakpanduri, AG Kings Medical Centre Bontanga and AG Eye Medical Centre Akim-Ofoase — we deliver compassionate, affordable, quality healthcare, community outreach and preventive health initiatives.",
-          image: "/images/projects_2.jpg",
+          image: "/images/education/school-health-session-education.jpg",
           badge: "Health Services",
           badgeColor: "#F36F8F",
           goalAmount: 25000,
@@ -193,7 +193,7 @@ async function main() {
           title: "EU Migration, Return & Reintegration",
           description:
             "Supporting vulnerable migrants, returnees and their families returning from EU member countries through pre-departure counselling, airport pickup, vocational training, business start-up support, employment guidance, psycho-social support and family mediation.",
-          image: "/images/projects_4.jpg",
+          image: "/images/lifeline/photo-20241023-105706.jpg",
           badge: "Reintegration",
           badgeColor: "#343877",
           goalAmount: 25000,
@@ -268,7 +268,7 @@ async function main() {
           startDate: new Date("2025-10-10"),
           endDate: new Date("2025-10-14"),
           time: "9:00 AM - 4:00 PM Daily",
-          image: "/images/event_1.jpg",
+          image: "/images/education/school-health-session-education.jpg",
         },
         {
           title: "Women's Skill Training & Empowerment Workshop",
@@ -276,14 +276,14 @@ async function main() {
           startDate: new Date("2025-11-05"),
           endDate: new Date("2025-11-07"),
           time: "10:00 AM - 5:00 PM",
-          image: "/images/event_2.jpg",
+          image: "/images/lifeline/photo-2.jpg",
         },
         {
           title: "Child Development & Family Support Forum",
           location: "Accra - Assemblies of God HQ",
           startDate: new Date("2025-12-03"),
           time: "9:00 AM - 2:00 PM",
-          image: "/images/event_3.jpg",
+          image: "/images/education/photo-2026-03-26.jpg",
         },
       ],
     });
@@ -342,10 +342,10 @@ async function main() {
       data: [
         {
           title: "AG Care Ghana Commissions New Borehole to Support Rural Families",
-          slug: "AG Care Ghana-commissions-new-borehole",
+          slug: "agcare-commissions-new-borehole",
           excerpt:
             "A new clean water facility has been commissioned in the Northern Region, providing relief to households that previously walked long distances for water.",
-          image: "/images/blog_1.jpg",
+          image: "/images/community-infrastructure/symbolic-handing-over-at-kokosiase.jpg",
           badge: "Community Development",
           badgeColor: "#49C2DF",
           isPublished: true,
@@ -356,7 +356,7 @@ async function main() {
           slug: "literacy-support-programme-expands",
           excerpt:
             "AG Care Ghana has launched new literacy centres to support children and adults who lack access to basic education, empowering local communities through learning.",
-          image: "/images/blog_2.png",
+          image: "/images/education/photo-0253.jpg",
           badge: "Education",
           badgeColor: "#2EC774",
           isPublished: true,
@@ -367,7 +367,7 @@ async function main() {
           slug: "emergency-relief-flood-affected-families",
           excerpt:
             "In response to recent flooding, AG Care Ghana mobilized emergency food supplies, clothing, and temporary shelter to support displaced families.",
-          image: "/images/blog_3.png",
+          image: "/images/community-infrastructure/volunteers-at-construction-site-6.jpg",
           badge: "Relief Support",
           badgeColor: "#F8AC3A",
           isPublished: true,
@@ -378,7 +378,7 @@ async function main() {
           slug: "mobile-clinic-extends-healthcare",
           excerpt:
             "AG Care Ghana's mobile medical outreach has delivered screenings, medicines, and maternal health support to rural areas lacking access to hospitals.",
-          image: "/images/blog_4.png",
+          image: "/images/education/school-health-session-education.jpg",
           badge: "Health",
           badgeColor: "#F36F8F",
           isPublished: true,

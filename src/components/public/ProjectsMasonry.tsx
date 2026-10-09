@@ -24,7 +24,7 @@ const PROJECTS = [
   {
     id: "p2",
     type: "horizontal" as const,
-    image: "/images/projects_2.jpg",
+    image: "/images/education/school-health-session-education.jpg",
     badge: "Health Services",
     badgeColor: "#F36F8F",
     panelColor: "#9BC35E",
@@ -69,7 +69,7 @@ const PROJECTS = [
   {
     id: "p5",
     type: "horizontal" as const,
-    image: "/images/projects_5.jpg",
+    image: "/images/lifeline/photo-20241023-105706.jpg",
     badge: "Community Development",
     badgeColor: "#2EC774",
     panelColor: "#E78F51",
