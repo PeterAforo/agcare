@@ -33,14 +33,14 @@ export default function AboutSection() {
               Assemblies of God Church, Ghana&mdash;working with partners in the
               love of God to eliminate poverty.
             </p>
-            <p className="text-gray-500 mb-5 leading-relaxed text-[15px]">
+            <p className="text-gray-600 font-medium mb-5 leading-relaxed text-[15px]">
               Formally established in 1990 and registered as an NGO in 1991, AG
               Care Ghana has directly impacted over 200,000 lives in more than
               60 communities through programmes in education, health, child
               protection, economic livelihoods, community infrastructure, and
               humanitarian assistance.
             </p>
-            <p className="text-gray-500 mb-10 leading-relaxed text-[15px]">
+            <p className="text-gray-600 font-medium mb-10 leading-relaxed text-[15px]">
               Working through church networks, local volunteers, community structures, and
               dedicated partners, AG Care Ghana continues to build resilient communities&mdash;empowering
               children to stay in school, training young women in employable skills,
@@ -55,51 +55,22 @@ export default function AboutSection() {
             </Link>
           </motion.div>
 
-          {/* Image + Info Box */}
+          {/* Image — stretches to match the text column height */}
           <motion.div
-            className="lg:w-1/2 xl:w-5/12 xl:ml-auto"
+            className="lg:w-1/2 xl:w-5/12 xl:ml-auto w-full lg:self-stretch"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <div className="relative">
-              {/* Layout frame image */}
+            <div className="relative w-full h-full min-h-[320px] rounded-lg overflow-hidden">
               <Image
-                src="/images/about_layout.png"
-                alt="decorative"
-                width={500}
-                height={600}
-                className="w-full h-auto"
+                src="/images/community-infrastructure/cultural-interactions-between-volunteers-and-community.jpg"
+                alt="AG Care Ghana volunteers and community members"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 42vw"
               />
-              {/* Background photo */}
-              <div className="absolute inset-[8%] overflow-hidden">
-                <Image
-                  src="/images/community-infrastructure/cultural-interactions-between-volunteers-and-community.jpg"
-                  alt="AG Care Ghana community support"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 42vw"
-                />
-              </div>
-              {/* Info box overlay — centered over image */}
-              <div className="absolute inset-[8%] flex flex-col items-center justify-center text-center text-white px-8 lg:px-12">
-                <h4 className="font-bold text-2xl lg:text-[35px] lg:leading-[40px] mb-6 !text-white">
-                  A Team Committed to Transforming Lives
-                </h4>
-                <p className="text-white/80 text-sm leading-relaxed mb-5 max-w-sm">
-                  Behind every AG Care Ghana initiative is a dedicated network of volunteers, pastors,
-                  community leaders, development workers, and field officers who share one
-                  purpose &mdash; to extend the compassion of Christ through practical support,
-                  empowerment, and hope for families across Ghana.
-                </p>
-                <Link
-                  href="/get-involved/volunteer"
-                  className="inline-block text-white text-sm font-bold uppercase tracking-wider border-b border-white pb-0.5 hover:text-accent-yellow hover:border-accent-yellow transition-colors"
-                >
-                  Become a Volunteer
-                </Link>
-              </div>
             </div>
           </motion.div>
         </div>
